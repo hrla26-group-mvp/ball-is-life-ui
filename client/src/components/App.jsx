@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import store from '../store/store';
 // IMPORT APP COMPONENTS HERE - MAKE SURE EVERYONE REBASES
 
 class App extends Component {
