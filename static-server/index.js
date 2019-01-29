@@ -1,6 +1,7 @@
 const http = require('http');
 const app = require('./app.js');
 
+
 const PORT = 3000;
 
 // this is our static server (solely used to server up index.html)

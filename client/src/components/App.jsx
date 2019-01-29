@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ComparisonRadial from '../components/comparsionRadial/ComparsionRadial.jsx';
 // IMPORT APP COMPONENTS HERE - MAKE SURE EVERYONE REBASES
 
 class App extends Component {
@@ -17,6 +18,7 @@ class App extends Component {
   render = () => (
     <div id="app">
       App
+      <ComparisonRadial/>
     </div>
   );
 }
