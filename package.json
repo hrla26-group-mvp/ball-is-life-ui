@@ -1,0 +1,48 @@
+{
+  "name": "ball-is-life-ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack -w",
+    "start": "nodemon static-server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hrla26-group-mvp/ball-is-life-ui.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hrla26-group-mvp/ball-is-life-ui/issues"
+  },
+  "homepage": "https://github.com/hrla26-group-mvp/ball-is-life-ui#readme",
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.3.0",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "eslint": "^5.12.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.0",
+    "eslint-plugin-react": "^7.12.4",
+    "nodemon": "^1.18.9",
+    "webpack": "^4.29.0",
+    "webpack-cli": "^3.2.1"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "morgan": "^1.9.1",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-redux": "^6.0.0",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
+  }
+}
