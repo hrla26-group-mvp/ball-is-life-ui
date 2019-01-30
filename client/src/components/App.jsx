@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 // IMPORT APP CONTAINERS HERE - MAKE SURE EVERYONE REBASES
 import NavbarContainer from '../containers/NavbarContainer';
+import ComparisonRadial from '../components/comparsionRadial/ComparsionRadial.jsx';
+
 
 class App extends Component {
   constructor(props) {
@@ -19,6 +21,7 @@ class App extends Component {
     <div id="app">
       App
       <NavbarContainer />
+      <ComparisonRadial/>
     </div>
   );
 }
