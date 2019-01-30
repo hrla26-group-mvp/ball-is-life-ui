@@ -8,6 +8,7 @@ const initialState = {
   fullscreen: false,
   playerOne: '',
   playerTwo: '',
+  scatterplotData: [],
 };
 
 const store = createStore(rootReducer, initialState,
