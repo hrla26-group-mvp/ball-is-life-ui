@@ -6,6 +6,8 @@ const initialState = {
   // INITIAL APP STATE HERE - MAKE SURE EVERYONE REBASES
   view: 'main',
   fullscreen: false,
+  playerOne: '',
+  playerTwo: '',
 };
 
 const store = createStore(rootReducer, initialState,
