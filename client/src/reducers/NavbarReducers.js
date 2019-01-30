@@ -1,16 +1,19 @@
-import { FULLSCREEN } from '../actions/Navbar';
-import initialState from '../store/initialState';
+import { FULLSCREEN, CHANGE_VIEW } from '../actions/actionTypes';
 
-export const fullscreenReducer = (state = {}, action) => {
-  console.log('in navbarreducer');
-  console.log('state: ', state);
-  console.log('action: ', action);
+export const fullscreen = (state = false, action) => {
   switch (action.type) {
     case FULLSCREEN:
-      console.log('fullscreen state');
-      return { ...state, fullscreen: !state.fullscreen };
+      return !state.fullscreen;
     default:
-      console.log('return default state: ', state);
+      return state;
+  }
+};
+
+export const view = (state = 'comparison', action) => {
+  switch (action.type) {
+    case CHANGE_VIEW:
+      return action.view;
+    default:
       return state;
   }
 };

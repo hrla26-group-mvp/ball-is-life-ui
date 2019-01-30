@@ -1,20 +1,21 @@
-import { UPDATE_PLAYER } from '../actions/Comparison';
-import initialState from '../store/initialState';
+import { UPDATE_PLAYER, UPDATE_PLAYER_DATA } from '../actions/actionTypes';
 
-export const comparisonReducer = (state = {}, action) => {
-  console.log('in comparisonreducer');
-  console.log('state: ', state);
-  console.log('action: ', action);
+export const comparisonData = (state = { playerOne: {}, playerTwo: {} }, action) => {
   switch (action.type) {
     case UPDATE_PLAYER:
-      console.log('updateplayer');
       return action.player === 1
         ? { ...state, playerOne: action.clickedPlayer }
         : { ...state, playerTwo: action.clickedPlayer };
     default:
-      console.log('returning default state: ', state);
       return state;
   }
 };
 
-// export default { comparisonReducer };
+export const playerData = (state = [], action) => {
+  switch (action.type) {
+    case UPDATE_PLAYER_DATA:
+      return action.playerData;
+    default:
+      return state;
+  }
+};

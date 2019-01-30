@@ -21,6 +21,19 @@ module.exports = {
           extensions: ['.jsx', '.js'],
         },
       },
+      {
+        test: /\.css$/,
+        loader: 'style-loader',
+      },
+      {
+        test: /\.css$/,
+        loader: 'css-loader',
+        include: path.join(__dirname, 'client'),
+        query: {
+          modules: true,
+          localIdentName: '[name]__[local]__[hash:base64:5]',
+        },
+      },
     ],
   },
 };

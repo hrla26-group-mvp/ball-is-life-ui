@@ -29,7 +29,8 @@ import PropTypes from 'prop-types';
 // });
 // groups.push(<g key={`groups`}>{data.map(shape(columns))}</g>);
 
-const ComparisonRadial = ({playerOne, playerTwo}) => {
+const ComparisonRadial = (props) => {
+  console.log(props);
   ComparisonRadial.propTypes = {
     playerOne: PropTypes.object,
     playerTwo: PropTypes.object,
@@ -42,7 +43,9 @@ const ComparisonRadial = ({playerOne, playerTwo}) => {
   // groups.push(<g key={`scales`}>{scales}</g>);
 
   return ( // start with empty svg and translate at end to move circle in center of svg
-    <svg />
+    <div id="comparison">
+      <svg />
+    </div>
     //   version="1"
     //   xmlns="http://www.w3.org/2000/svg"
     //   width={chartSize}

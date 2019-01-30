@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import handlePlayerChoice from '../actions/Comparison';
+import { handlePlayerChoice } from '../actions/Comparison';
 import ComparisonRadial from '../components/comparisonRadial/ComparisonRadial';
 
 // this provides whatever is inside the container with state properties as props
@@ -8,6 +8,7 @@ const mapStateToProps = state => ({
   // STATE PROPS HERE
   playerOne: state.playerOne,
   playerTwo: state.playerTwo,
+  playerData: state.playerData,
 });
 
 // this provides whatever is inside the container with fns that update state by dispatching actions
