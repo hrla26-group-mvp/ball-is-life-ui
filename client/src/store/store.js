@@ -6,6 +6,9 @@ const initialState = {
   // INITIAL APP STATE HERE - MAKE SURE EVERYONE REBASES
   view: 'main',
   fullscreen: false,
+  playerOne: '',
+  playerTwo: '',
+  scatterplotData: [],
 };
 
 const store = createStore(rootReducer, initialState,
