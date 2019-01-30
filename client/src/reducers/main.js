@@ -1,8 +1,12 @@
 import { combineReducers } from 'redux';
-// ** ADD REDUCERS TO THIS FOLDER AND IMPORT HERE - MAKE SURE EVERYONE REBASES
+import { fullscreenReducer } from './NavbarReducers';
+import { scatterplotDataReducer } from './ScatterplotReducers';
+import { comparisonReducer } from './ComparisonReducers';
 
-const rootReducer = combineReducers({
-  // ** LIST IMPORTED REDUCERS HERE - MAKE SURE EVERYONE REBASES
+export const rootReducer = combineReducers({
+  fullscreenReducer,
+  comparisonReducer,
+  scatterplotDataReducer,
 });
 
-export default rootReducer;
+// export default rootReducer;

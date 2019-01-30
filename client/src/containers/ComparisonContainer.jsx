@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import handlePlayerChoice from '../actions/Comparison';
-import ComparisonRadial from '../components/comparsionRadial/ComparisonRadial.jsx';
+import ComparisonRadial from '../components/comparisonRadial/ComparisonRadial';
 
 // this provides whatever is inside the container with state properties as props
 // this replaces passing down this.state.XYZ as a prop

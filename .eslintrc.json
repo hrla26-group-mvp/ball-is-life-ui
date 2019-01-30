@@ -2,6 +2,7 @@
     "extends": "airbnb",
     "rules": {
         "no-console": "off",
-        "eol-last": "off"
+        "eol-last": "off",
+        "import/prefer-default-export": "off"
     }
 }

@@ -1,17 +1,14 @@
 import { connect } from 'react-redux';
-import ScatterplotView from '../components/player-scatterplot/ScatterplotView.jsx';
+import ScatterplotView from '../components/scatterplot/ScatterplotView';
+import scatterplotActions from '../actions/Scatterplot';
 
-// this provides whatever is inside the container with state properties as props
-// this replaces passing down this.state.XYZ as a prop
-const mapStateToProps = {
-  // STATE PROPS HERE
-};
+const mapStateToProps = state => ({
+  scatterplotData: state.scatterplotData,
+});
 
-// this provides whatever is inside the container with fns that update state by dispatching actions
-// this replaces passing down functions ( e.g., (XYZ) => { this.setState(XYZ); } ) as a prop
-const mapDispatchToProps = {
-  // DISPATCH FNS HERE
-};
+const mapDispatchToProps = dispatch => ({
+  updateScatterplotData: (scatterplotData) => { dispatch(scatterplotActions.changeScatterplotData(scatterplotData)); },
+});
 
 const ScatterplotViewContainer = connect(mapStateToProps, mapDispatchToProps)(ScatterplotView);
 

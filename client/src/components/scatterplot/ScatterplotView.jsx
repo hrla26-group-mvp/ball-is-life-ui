@@ -1,10 +1,12 @@
 import React from 'react';
+import Scatterplot from './Scatterplot.jsx';
+import ScatterplotFilters from './ScatterplotFilters.jsx';
 
-// scatterplot view component
-// this component will be wrapped in a container that receives state and dispatch fns as props
 const PlayerScatterplotView = props => (
   <div id="playerscatterplotview">
     Player Scatterplot View
+    <ScatterplotFilters />
+    <Scatterplot />
   </div>
 );
 
