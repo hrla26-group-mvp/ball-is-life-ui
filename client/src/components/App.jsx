@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // IMPORT APP CONTAINERS HERE - MAKE SURE EVERYONE REBASES
-import ComparisonRadial from './comparisonRadial/ComparisonRadial.jsx';
+import ComparisonContainer from '../containers/ComparisonContainer';
 import NavbarContainer from '../containers/NavbarContainer';
 import ScatterplotViewContainer from '../containers/ScatterplotViewContainer';
 
@@ -21,7 +21,7 @@ class App extends Component {
     <div id="app">
       App
       <NavbarContainer />
-      <ComparisonRadial/>
+      <ComparisonContainer/>
       <ScatterplotViewContainer />
     </div>
   );
