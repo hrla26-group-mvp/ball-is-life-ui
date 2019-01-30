@@ -8,7 +8,7 @@ class Navbar extends React.Component {
     // fullscreen toggles by clicking the small icon
     // prolly put this one level above
   }
-  
+
   render() {
     const { 
       view, fullscreen

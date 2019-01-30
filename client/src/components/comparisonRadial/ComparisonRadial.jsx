@@ -42,7 +42,7 @@ const ComparisonRadial = ({playerOne, playerTwo}) => {
   // groups.push(<g key={`scales`}>{scales}</g>);
 
   return ( // start with empty svg and translate at end to move circle in center of svg
-    // <svg 
+    <svg />
     //   version="1"
     //   xmlns="http://www.w3.org/2000/svg"
     //   width={chartSize}
@@ -50,7 +50,6 @@ const ComparisonRadial = ({playerOne, playerTwo}) => {
     //   viewBox={`0 0 ${chartSize} ${chartSize}`}
     // >
     //   <g transform={`translate(${middleOfChart},${middleOfChart})`}>{groups}</g>
-    // </svg>
   );
 };
 
