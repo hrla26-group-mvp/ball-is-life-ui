@@ -1,3 +1,6 @@
-export default {
-  changeScatterplotData: scatterplotData => ({ type: 'CHANGE_SCATTERPLOT_DATA', scatterplotData }),
-};
+import { UPDATE_SCATTERPLOT_DATA } from './actionTypes';
+
+export const changeScatterplotData = scatterplotData => ({
+  type: UPDATE_SCATTERPLOT_DATA,
+  scatterplotData,
+});

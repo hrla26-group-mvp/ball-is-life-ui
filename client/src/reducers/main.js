@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
-import { fullscreenReducer } from './NavbarReducers';
-import { scatterplotDataReducer } from './ScatterplotReducers';
-import { comparisonReducer } from './ComparisonReducers';
+import { fullscreen, view } from './NavbarReducers';
+import { scatterplotData } from './ScatterplotReducers';
+import { comparisonData, playerData } from './ComparisonReducers';
 
 export const rootReducer = combineReducers({
-  fullscreenReducer,
-  comparisonReducer,
-  scatterplotDataReducer,
+  fullscreen,
+  view,
+  scatterplotData,
+  comparisonData,
+  playerData,
 });
-
-// export default rootReducer;

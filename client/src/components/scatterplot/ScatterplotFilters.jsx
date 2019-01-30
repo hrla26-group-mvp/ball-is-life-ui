@@ -1,9 +1,7 @@
 import React from 'react';
 
-const ScatterplotFilters = props => (
+export const ScatterplotFilters = () => (
   <div id="scatterplotfilters">
     Scatterplot Filters
   </div>
 );
-
-export default ScatterplotFilters;

@@ -1,10 +1,12 @@
-const UPDATE_PLAYER = 'UPDATE_PLAYER';
+import { UPDATE_PLAYER, UPDATE_PLAYER_DATA } from './actionTypes';
 
-const handlePlayerChoice = (clickedPlayer, position) => ({
+export const handlePlayerChoice = (clickedPlayer, position) => ({
   type: UPDATE_PLAYER,
   clickedPlayer,
   position,
 });
 
-
-module.exports = { handlePlayerChoice };
+export const updatePlayerData = playerData => ({
+  type: UPDATE_PLAYER_DATA,
+  playerData,
+});

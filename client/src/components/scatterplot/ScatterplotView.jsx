@@ -1,13 +1,11 @@
 import React from 'react';
-import Scatterplot from './Scatterplot.jsx';
-import ScatterplotFilters from './ScatterplotFilters.jsx';
+import { Scatterplot } from './Scatterplot';
+import { ScatterplotFilters } from './ScatterplotFilters';
 
-const PlayerScatterplotView = props => (
+export const ScatterplotView = props => (
   <div id="playerscatterplotview">
     Player Scatterplot View
     <ScatterplotFilters />
     <Scatterplot />
   </div>
 );
-
-export default PlayerScatterplotView;

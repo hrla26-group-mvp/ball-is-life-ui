@@ -2,11 +2,21 @@ import React, { Component } from 'react';
 import ComparisonContainer from '../containers/ComparisonContainer.jsx';
 import NavbarContainer from '../containers/NavbarContainer.jsx';
 import ScatterplotViewContainer from '../containers/ScatterplotViewContainer.jsx';
+import axios from 'axios';
 
-class App extends Component {
+export default class App extends Component {
   constructor(props) {
     super(props);
   }
+
+  componentWillMount = () => {
+    axios.get('localhost:5000/api/data/')
+      .then(({ data }) => { 
+        console.log(data);
+        this.props.updatePlayerData(data);
+      })
+      .catch((err) => { console.error(err); });
+  };
 
   renderCurrentView = () => {
     if (this.props.view === 'scatterplot') {
@@ -20,11 +30,8 @@ class App extends Component {
 
   render = () => (
     <div id="app">
-      App
-      <NavbarContainer />
+      { this.props.fullscreen ? null : <NavbarContainer /> }
       { this.renderCurrentView() }
     </div>
   );
 }
-
-export default App;

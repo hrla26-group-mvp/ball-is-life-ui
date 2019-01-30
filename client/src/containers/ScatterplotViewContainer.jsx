@@ -1,13 +1,16 @@
 import { connect } from 'react-redux';
-import ScatterplotView from '../components/scatterplot/ScatterplotView';
-import scatterplotActions from '../actions/Scatterplot';
+import { ScatterplotView } from '../components/scatterplot/ScatterplotView';
+import { changeScatterplotData } from '../actions/Scatterplot';
 
 const mapStateToProps = state => ({
   scatterplotData: state.scatterplotData,
+  playerData: state.playerData,
 });
 
 const mapDispatchToProps = dispatch => ({
-  updateScatterplotData: (scatterplotData) => { dispatch(scatterplotActions.changeScatterplotData(scatterplotData)); },
+  changeScatterplotData: (scatterplotData) => {
+    dispatch(changeScatterplotData(scatterplotData));
+  },
 });
 
 const ScatterplotViewContainer = connect(mapStateToProps, mapDispatchToProps)(ScatterplotView);
