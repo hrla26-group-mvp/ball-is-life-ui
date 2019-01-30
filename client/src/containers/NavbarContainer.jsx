@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import Navbar from '../components/navbar/Navbar';
-import toggleFullscreen from '../actions/Navbar';
+import Navbar from '../components/navbar/Navbar.jsx';
+import { toggleFullscreen } from '../actions/Navbar';
 
 // this provides whatever is inside the container with state properties as props
 // this replaces passing down this.state.XYZ as a prop

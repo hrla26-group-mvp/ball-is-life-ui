@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default class Navbar extends React.Component {
+class Navbar extends React.Component {
   static propTypes = {
     view: PropTypes.string.isRequired,
     fullscreen: PropTypes.bool.isRequired, 
@@ -25,3 +25,5 @@ export default class Navbar extends React.Component {
     )
   }
 }
+
+export default Navbar;

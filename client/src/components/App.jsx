@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 // IMPORT APP CONTAINERS HERE - MAKE SURE EVERYONE REBASES
-import ComparisonContainer from '../containers/ComparisonContainer';
-import NavbarContainer from '../containers/NavbarContainer';
-import ScatterplotViewContainer from '../containers/ScatterplotViewContainer';
+import ComparisonContainer from '../containers/ComparisonContainer.jsx';
+import NavbarContainer from '../containers/NavbarContainer.jsx';
+import ScatterplotViewContainer from '../containers/ScatterplotViewContainer.jsx';
 
 class App extends Component {
   constructor(props) {

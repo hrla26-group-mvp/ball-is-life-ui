@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import ScatterplotView from '../components/player-scatterplot/ScatterplotView';
+import ScatterplotView from '../components/player-scatterplot/ScatterplotView.jsx';
 
 // this provides whatever is inside the container with state properties as props
 // this replaces passing down this.state.XYZ as a prop
