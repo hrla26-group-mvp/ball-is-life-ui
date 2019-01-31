@@ -6,9 +6,7 @@ import styles from '../../styles/scatterplot/ScatterplotView.css';
 export class ScatterplotView extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-
-    };
+    this.ref = React.createRef();
   }
 
   updateScatterplotData = () => {
@@ -16,9 +14,12 @@ export class ScatterplotView extends Component {
   };
 
   render = () => (
-    <div className={styles.scatterplotview}>
+    <div className={styles.scatterplotview} ref={this.ref}>
       <ScatterplotFiltersList />
-      <Scatterplot playerData={this.props.playerData} />
+      <Scatterplot
+        scatterplotData={this.props.scatterplotData}
+        scatterplotViewRef={this.ref}
+      />
     </div>
   );
 }
