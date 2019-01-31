@@ -31,7 +31,7 @@ export default class App extends Component {
 
   render = () => (
     <div className={styles.app}>
-      { this.props.fullscreen ? null : <NavbarContainer /> }
+      <NavbarContainer />
       <div className={styles.currentviewcontainer}>
         { this.renderCurrentView() }
       </div>

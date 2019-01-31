@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { Component } from 'react';
+import styles from '../../styles/scatterplot/Scatterplot.css';
 
-export const Scatterplot = (props) => (
-  <div id="scatterplot">
-    Scatterplot
-  </div>
-);
+export class Scatterplot extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render = () => (
+    <div className={styles.scatterplot}>
+      Scatterplot
+    </div>
+  );
+}
