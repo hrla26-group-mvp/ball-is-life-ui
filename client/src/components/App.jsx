@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import ComparisonContainer from '../containers/ComparisonContainer.jsx';
 import NavbarContainer from '../containers/NavbarContainer.jsx';
 import ScatterplotViewContainer from '../containers/ScatterplotViewContainer.jsx';
-import axios from 'axios';
+import styles from '../styles/App.css';
 
 export default class App extends Component {
   constructor(props) {
@@ -29,9 +30,11 @@ export default class App extends Component {
   };
 
   render = () => (
-    <div id="app">
+    <div className={styles.app}>
       { this.props.fullscreen ? null : <NavbarContainer /> }
-      { this.renderCurrentView() }
+      <div className={styles.currentviewcontainer}>
+        { this.renderCurrentView() }
+      </div>
     </div>
   );
 }
