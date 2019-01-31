@@ -4,7 +4,7 @@ import { toggleFullscreen, changeView } from '../actions/Navbar';
 
 const mapStateToProps = state => ({
   // view: state.view,
-  // fullscreen: state.fullscreen,
+  fullscreen: state.fullscreen,
 });
 
 const mapDispatchToProps = dispatch => ({
