@@ -10,9 +10,9 @@ export default class App extends Component {
   }
 
   componentWillMount = () => {
-    axios.get('localhost:5000/api/data/')
-      .then(({ data }) => { 
-        console.log(data);
+    axios.get('/api/data/')
+      .then(({ data }) => {
+        console.log('data: ', data);
         this.props.updatePlayerData(data);
       })
       .catch((err) => { console.error(err); });
