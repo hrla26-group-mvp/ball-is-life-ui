@@ -5,7 +5,7 @@ import NavbarContainer from '../containers/NavbarContainer.jsx';
 import ScatterplotViewContainer from '../containers/ScatterplotViewContainer.jsx';
 import styles from '../styles/App.css';
 
-export default class App extends Component {
+export class App extends Component {
   constructor(props) {
     super(props);
   }
@@ -15,6 +15,7 @@ export default class App extends Component {
       .then(({ data }) => {
         console.log('data: ', data);
         this.props.updatePlayerData(data);
+        this.props.updateScatterplotData(data);
       })
       .catch((err) => { console.error(err); });
   };
