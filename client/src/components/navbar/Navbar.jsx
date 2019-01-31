@@ -1,16 +1,50 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import styles from '../../styles/navbar/Navbar.css';
 
-const Navbar = props => (
-  <div id="navbar">
-    <h1>Ball is Life</h1>
-    <span>&#9776;</span>
-    <div>
-      Scatterplot
-    </div>
-    <div>
-      Compare Players
-    </div>
-  </div>
-);
+export default class Navbar extends React.Component {
+  static propTypes = {
+    fullscreen: PropTypes.bool.isRequired,
+    toggleFullscreen: PropTypes.func.isRequired,
+    changeView: PropTypes.func.isRequired,
+  };
 
-export default Navbar;
+  rendermore() {
+    const { fullscreen, toggleFullscreen, changeView } = this.props;
+    return(
+      <div className={styles.base}>
+        <div className={styles.topContainer}>
+          <h2 className={styles.title}>Ball is Life</h2>
+          <button className={styles.fullscreenButton} onClick={toggleFullscreen} type="button">&#9776;</button>
+        </div>
+        <div className={styles.container}>
+          <button type="button" className={styles.button} onClick={() => changeView('scatterplot')}>
+            Scatterplot
+          </button>
+          <button type="button" className={styles.button} onClick={() => changeView('comparison')}>
+            Compare Players
+          </button>
+        </div>
+      </div>
+    )
+  }
+
+  renderless() {
+    const { fullscreen, toggleFullscreen, changeView } = this.props;
+    return(
+      <div className={styles.fullscreen}>
+        <button className={styles.fullscreenButton} onClick={toggleFullscreen} type="button">&#9776;</button>
+      </div>
+    )    
+  }
+  
+  render() {
+  const { fullscreen } = this.props;
+    return(
+      <div className={styles.navBar}>
+        {fullscreen ? this.renderless() : this.rendermore()}  
+      </div>
+    )
+  }
+
+};
