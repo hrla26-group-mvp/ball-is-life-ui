@@ -1,11 +1,11 @@
 import React from 'react';
 import { Scatterplot } from './Scatterplot';
-import { ScatterplotFilters } from './ScatterplotFilters';
+import { ScatterplotFiltersList } from './ScatterplotFiltersList';
+import styles from '../../styles/scatterplot/ScatterplotView.css';
 
 export const ScatterplotView = props => (
-  <div id="playerscatterplotview">
-    Player Scatterplot View
-    <ScatterplotFilters />
-    <Scatterplot />
+  <div className={styles.scatterplotview}>
+    <ScatterplotFiltersList />
+    <Scatterplot  />
   </div>
 );
