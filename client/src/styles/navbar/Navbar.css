@@ -1,0 +1,34 @@
+.base {
+  overflow: auto;
+  background-color: #002650;
+  height: auto;
+}
+
+.navbar {
+  background-color: #002650;
+}
+
+.button {
+  border: none;
+  background-color: #002650;
+  color: #f8f8ff;
+}
+
+.fullscreenButton {
+  border: none;
+  cursor: pointer;
+  background-color: #002650;
+  color: #f8f8ff;
+}
+
+.fullscreen {
+  background-color: #002650;
+  width: 5%;
+}
+.topContainer {
+  color: #f8f8ff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
