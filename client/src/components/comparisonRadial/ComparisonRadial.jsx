@@ -53,7 +53,21 @@ class ComparisonRadial extends React.Component {
       .attr('height', d => (height - yScale(d.value)))
       .attr('width', d => xScale.bandwidth())
       .style('fill', (d, i) => colorScale(i));
-
+    chart.selectAll('.bar-label')
+      .data(data)
+      .enter()
+      .append('text')
+      .classed('bar-label', true)
+      .attr('x', d=>xScale(d.name) + xScale.bandwidth()/2)
+      .attr('dx', 0)
+      .attr('y', d => yScale(d.data))
+      .attr('dy', -6)  // explore with dx dy for text
+      .text(d => d.data)
+    const xAxis = d3.axisBottom()
+      .scale(xScale);
+    chart.append('g')
+      .classed('x axis', true)
+      .attr('transform', )
     // const upd = node.selectAll('rect').data(data);
     // upd.enter()
     //     .append('rect')
