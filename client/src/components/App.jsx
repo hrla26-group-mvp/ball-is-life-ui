@@ -31,7 +31,9 @@ export default class App extends Component {
 
   render = () => (
     <div className={styles.app}>
-      <NavbarContainer />
+      <div className={styles.navbarContainer}>
+        <NavbarContainer />
+      </div>
       <div className={styles.currentviewcontainer}>
         { this.renderCurrentView() }
       </div>
