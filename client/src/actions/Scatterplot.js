@@ -1,6 +1,6 @@
 import { UPDATE_SCATTERPLOT_DATA } from './actionTypes';
 
-export const changeScatterplotData = scatterplotData => ({
+export const updateScatterplotData = scatterplotData => ({
   type: UPDATE_SCATTERPLOT_DATA,
   scatterplotData,
 });
