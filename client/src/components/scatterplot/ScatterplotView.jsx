@@ -6,6 +6,6 @@ import styles from '../../styles/scatterplot/ScatterplotView.css';
 export const ScatterplotView = props => (
   <div className={styles.scatterplotview}>
     <ScatterplotFiltersList />
-    <Scatterplot  />
+    <Scatterplot playerData={props.playerData} />
   </div>
 );
