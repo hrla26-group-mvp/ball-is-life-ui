@@ -1,0 +1,10 @@
+.app {
+  border: solid black 1px;
+  display: flex;
+  width: auto;
+}
+
+.currentviewcontainer {
+  border: solid black 1px;
+  width: 100%;
+}
