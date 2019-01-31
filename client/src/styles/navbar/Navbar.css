@@ -4,6 +4,11 @@
   height: auto;
 }
 
+h2 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+
 .navbar {
   background-color: #1d1e22;
 }
@@ -16,8 +21,22 @@
   opacity: 0.4;
 }
 
+.button:focus {
+  border-left-width: 5px;
+  outline:0;
+  opacity:1;
+  color: #d4d4dc;
+  border-left-color: #FF4500;
+}
+
 .button:hover {
   opacity: 1;
+}
+
+.button:active {
+  opacity:1;
+  color: #d4d4dc;
+  border-left-color: #FF4500;
 }
 
 .fullscreenButton {
