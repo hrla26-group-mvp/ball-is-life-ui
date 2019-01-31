@@ -1,58 +1,66 @@
 import React from 'react';
-// import axios from 'axios';
 import PropTypes from 'prop-types';
 
-// const chartSize = 450;
-// const numberOfScales = 4;
-// const middleOfChart = (chartSize / 2).toFixed(4);
-// const scale = value => (
-//   <circle // setting radius and size of circle
-//     key={`scale-${value}`}
-//     cx={0}
-//     cy={0}
-//     r={((value / numberOfScales) * chartSize) / 2}
-//     fill="#FAFAFA"
-//     stroke="#999"
-//     strokeWidth="0.2"
-//   />
-// );
-// const data = [{two_points_pct: 0.5, three_points_pct: 0.388, points_in_paint_pct: 0.541, free_throws_pct: 0.604, field_goals_pct: 0.452}, 
-// {two_points_pct: 0.5, three_points_pct: 0.388, points_in_paint_pct: 0.541, free_throws_pct: 0.604, field_goals_pct: 0.452}]
+class ComparisonRadial extends Component { 
+    constructor(props){
+      super(props);
+    }
+  componentDidMount() {
+    this.drawChart();
+  }
+  const data1 = props.playerData[0];
+  const data2 = props.playerData[1];
+  if (data1) { // refactor to handle async
+    const arr1 = [
+      { 'assists per game': data1.assists_per_game },
+      { 'blocks per game': data1.blocks_per_game },
+      { 'field goals per game': data1.field_goals_made_per_game },
+      { 'three points per game': data1.three_points_made_per_game },
+      { 'two points per game': data1.two_points_made_per_game },
+      { 'rebounds per game': data1.rebounds_per_game },
+      { 'freethrows per game': data1.free_throws_made_per_game },
+    ];
+    const arr2 = [
+      { 'assists per game': data2.assists_per_game },
+      { 'blocks per game': data2.blocks_per_game },
+      { 'field goals per game': data2.field_goals_made_per_game },
+      { 'three points per game': data2.three_points_made_per_game },
+      { 'two points per game': data2.two_points_made_per_game },
+      { 'rebounds per game': data2.rebounds_per_game },
+      { 'freethrows per game': data2.free_throws_made_per_game },
+    ];
+  }
 
-
-// const captions = Object.keys(data[0]);
-// const columns = captions.map((key, i, all) => {
-//   return {
-//     key,
-//     angle: (Math.PI * 2 * i) / all.length,
-//   };
-// });
-// groups.push(<g key={`groups`}>{data.map(shape(columns))}</g>);
-
-const ComparisonRadial = (props) => {
-  ComparisonRadial.propTypes = {
-    playerOne: PropTypes.object,
-    playerTwo: PropTypes.object,
+  drawChart() {
+    const data = [12, 5, 6, 6, 9, 10];
+    
+    const svg = d3.select("body")
+    .append("svg")
+    .attr("width", w)
+    .attr("height", h)
+    .style("margin-left", 100);
+                  
+    svg.selectAll("rect")
+      .data(data)
+      .enter()
+      .append("rect")
+      .attr("x", (d, i) => i * 70)
+      .attr("y", (d, i) => h - 10 * d)
+      .attr("width", 65)
+      .attr("height", (d, i) => d * 10)
+      .attr("fill", "green")
   };
-  // const groups = [];
-  // const scales = [];
-  // for (let i = numberOfScales; i > 0; i--) {
-  //   scales.push(scale(i));
-  // }
-  // groups.push(<g key={`scales`}>{scales}</g>);
 
-  return ( // start with empty svg and translate at end to move circle in center of svg
-    <div id="comparison">
-      <svg />
-    </div>
-    //   version="1"
-    //   xmlns="http://www.w3.org/2000/svg"
-    //   width={chartSize}
-    //   height={chartSize}
-    //   viewBox={`0 0 ${chartSize} ${chartSize}`}
-    // >
-    //   <g transform={`translate(${middleOfChart},${middleOfChart})`}>{groups}</g>
-  );
+  // ComparisonRadial.propTypes = {
+  //   playerOne: PropTypes.object,
+  //   playerTwo: PropTypes.object,
+  // };      
+  render(){
+    return (
+      <div></div>
+    )
+  }
 };
+
 
 export default ComparisonRadial;
