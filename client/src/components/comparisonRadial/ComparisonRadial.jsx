@@ -30,7 +30,6 @@ import PropTypes from 'prop-types';
 // groups.push(<g key={`groups`}>{data.map(shape(columns))}</g>);
 
 const ComparisonRadial = (props) => {
-  console.log(props);
   ComparisonRadial.propTypes = {
     playerOne: PropTypes.object,
     playerTwo: PropTypes.object,
