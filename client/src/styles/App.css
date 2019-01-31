@@ -10,3 +10,8 @@
   flex-grow: 1;
   width: 80%;
 }
+
+.navbarContainer {
+  background-color: #002650;
+  width: auto;
+}

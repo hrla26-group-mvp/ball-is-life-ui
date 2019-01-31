@@ -4,6 +4,10 @@
   height: auto;
 }
 
+.navbar {
+  background-color: #002650;
+}
+
 .button {
   border: none;
   background-color: #002650;

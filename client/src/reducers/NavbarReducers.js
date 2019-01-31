@@ -3,7 +3,7 @@ import { FULLSCREEN, CHANGE_VIEW } from '../actions/actionTypes';
 export const fullscreen = (state = false, action) => {
   switch (action.type) {
     case FULLSCREEN:
-      return !state.fullscreen;
+      return !state;
     default:
       return state;
   }
