@@ -1,7 +1,7 @@
 import React from 'react';
 import { ScatterplotAxis } from './ScatterplotAxis';
 
-export const ScatterplotXYAxes = ({ playerData, xScale, yScale, padding, height }) => {
+export const ScatterplotXYAxes = ({ xStat, yStat, xScale, yScale, padding, width, height }) => {
   const xSettings = {
     translate: `translate(0, ${height - padding})`,
     scale: xScale,
@@ -16,8 +16,20 @@ export const ScatterplotXYAxes = ({ playerData, xScale, yScale, padding, height 
 
   return (
     <g className="scatterplotxyaxes">
-      <ScatterplotAxis {...xSettings} />
-      <ScatterplotAxis {...ySettings} />
+      <ScatterplotAxis
+        {...xSettings}
+        stat={xStat}
+        padding={padding}
+        width={width}
+        height={height}
+      />
+      <ScatterplotAxis
+        {...ySettings}
+        stat={yStat}
+        padding={padding}
+        width={width}
+        height={height}
+      />
     </g>
   );
 };

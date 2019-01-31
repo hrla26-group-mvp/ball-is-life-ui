@@ -1,9 +1,9 @@
 import React from 'react';
 import { ScatterplotDot } from './ScatterplotDot';
 
-export const ScatterplotDots = ({ playerData, xScale, yScale, xStat, yStat }) => (
+export const ScatterplotDots = ({ scatterplotData, xScale, yScale, xStat, yStat }) => (
   <g>
-    {playerData.map((d, i) => (
+    {scatterplotData.map((d, i) => (
       <ScatterplotDot
         cx={xScale(d[xStat]).toString()}
         cy={yScale(d[yStat]).toString()}
