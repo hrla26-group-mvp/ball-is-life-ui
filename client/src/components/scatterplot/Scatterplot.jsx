@@ -50,8 +50,8 @@ export class Scatterplot extends Component {
   }
 
   render = () => {
-    const { scatterplotData } = this.props;
-    const { ref, xStat, yStat, xScale, yScale } = this;
+    const { scatterplotData, xStat, yStat } = this.props;
+    const { ref, xScale, yScale } = this;
     const { lPadding, rPadding, tPadding, bPadding, width, height } = this.state;
 
     return (

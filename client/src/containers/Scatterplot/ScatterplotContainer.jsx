@@ -5,6 +5,8 @@ import { updateScatterplotData } from '../../actions/Scatterplot';
 const mapStateToProps = state => ({
   scatterplotData: state.scatterplotData,
   playerData: state.playerData,
+  xStat: state.xStat,
+  yStat: state.yStat,
 });
 
 const mapDispatchToProps = dispatch => ({
