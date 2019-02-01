@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import ComparisonContainer from '../containers/ComparisonContainer.jsx';
 import NavbarContainer from '../containers/NavbarContainer.jsx';
-import ScatterplotViewContainer from '../containers/ScatterplotViewContainer.jsx';
+import ScatterplotViewContainer from '../containers/Scatterplot/ScatterplotViewContainer';
 import VideoContainer from '../containers/VideoContainer';
 import styles from '../styles/App.css';
 

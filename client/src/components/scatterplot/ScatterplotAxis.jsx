@@ -21,12 +21,13 @@ export class ScatterplotAxis extends Component {
   };
 
   render = () => {
-    const { orient, translate, padding, width, height, stat } = this.props;
+    let { orient, translate, padding, width, height, stat } = this.props;
+    stat = stat.split('_').map(s => s[0].toUpperCase() + s.slice(1)).join(' ');
 
     return (
       <g className="scatterplotaxiscontainer">
         {orient === 'bottom' ?
-          <text transform={`translate(${width / 2}, ${height})`}>{stat}</text>
+          <text transform={`translate(${width / 2}, ${height - padding / 3})`}>{stat}</text>
         : orient === 'left' ?
           <text
             transform={`rotate(-90)`}
