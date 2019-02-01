@@ -24,6 +24,9 @@ export default class Navbar extends React.Component {
           <button type="button" className={styles.button} onClick={() => changeView('comparison')}>
             Compare Players
           </button>
+          <button type="button" className={styles.button} onClick={() => changeView('video')}>
+            Videos
+          </button>
         </div>
       </div>
     )

@@ -1,34 +1,69 @@
 .base {
   overflow: auto;
-  background-color: #002650;
+  background-color: #1d1e22;
   height: auto;
 }
 
+h2 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+
 .navbar {
-  background-color: #002650;
+  background-color: #1d1e22;
 }
 
 .button {
   border: none;
-  background-color: #002650;
-  color: #f8f8ff;
+  background-color: #1d1e22;
+  color: #d4d4dc;
+  font-size: 24px;
+  opacity: 0.4;
+}
+
+.button:focus {
+  border-left-width: 5px;
+  outline:0;
+  opacity:1;
+  color: #d4d4dc;
+  border-left-color: #FF4500;
+}
+
+.button:hover {
+  opacity: 1;
+}
+
+.button:active {
+  opacity:1;
+  color: #d4d4dc;
+  border-left-color: #FF4500;
 }
 
 .fullscreenButton {
   border: none;
   cursor: pointer;
-  background-color: #002650;
-  color: #f8f8ff;
+  background-color: #1d1e22;
+  color: #d4d4dc;
 }
 
 .fullscreen {
-  background-color: #002650;
+  background-color: #1d1e22;
   width: 5%;
+  font-family: 'Roboto', sans-serif;
 }
+
 .topContainer {
-  color: #f8f8ff;
+  color: #d4d4dc;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-family: 'Roboto', sans-serif;
 }
