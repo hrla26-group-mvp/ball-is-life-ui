@@ -2,6 +2,7 @@ import React from 'react';
 import { scaleBand, scaleLinear } from 'd3';
 import Axes from './Axes';
 import Bars from './Bars';
+import BarsDos from './BarsDos';
 import styles from '../../styles/comparison/Comparison.css';
 
 class Chart extends React.Component {
@@ -19,6 +20,15 @@ class Chart extends React.Component {
         { name: 'three points per game', data: 9 },
         { name: 'two points per game', data: 34 },
         { name: 'rebounds per game', data: 5 },
+        { name: 'freethrows per game', data: 9 },
+      ],
+      playerTwo: [
+        { name: 'assists per game', data: 12 },
+        { name: 'blocks per game', data: 5 },
+        { name: 'field goals per game', data: 10 },
+        { name: 'three points per game', data: 20 },
+        { name: 'two points per game', data: 29 },
+        { name: 'rebounds per game', data: 8 },
         { name: 'freethrows per game', data: 9 },
       ],
       width: 800,
@@ -69,6 +79,13 @@ class Chart extends React.Component {
             scales={{ xScale, yScale }}
             margins={margins}
             data={this.state.playerOne}
+            maxValue={maxValue}
+            svgDimensions={svgDimensions}
+          />
+          <BarsDos
+            scales={{ xScale, yScale }}
+            margins={margins}
+            data={this.state.playerTwo}
             maxValue={maxValue}
             svgDimensions={svgDimensions}
           />

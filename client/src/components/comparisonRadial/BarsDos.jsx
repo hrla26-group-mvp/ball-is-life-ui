@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import { scaleLinear, scaleOrdinal } from 'd3';
+import React from 'react';
+import { scaleLinear } from 'd3';
 import { interpolateLab } from 'd3';
 
-export default class Bars extends Component {
+export default class BarsDos extends React.Component {
   constructor(props) {
     super(props);
 
     this.colorScale = scaleLinear()
       .domain([0, this.props.maxValue])
-      .range(['#85E3FF', '#63E09B'])
+      .range(['rgba(255, 255, 240, 0.6)'])
       .interpolate(interpolateLab);
   }
 

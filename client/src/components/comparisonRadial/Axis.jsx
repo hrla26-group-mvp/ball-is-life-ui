@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import * as d3Axis from 'd3';
 import { select as d3Select } from 'd3';
 
 // import './Axis.css'
 
-export default class Axis extends Component {
+export default class Axis extends React.Component {
   componentDidMount() {
     this.renderAxis();
   }
