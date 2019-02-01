@@ -2,7 +2,7 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import Chart from './Chart.jsx';
 // import { select, scaleBand, scaleLinear } from 'd3';
-// import styles from '../../styles/comparison/Comparison.css';
+import styles from '../../styles/comparison/Comparison.css';
 
 class ComparisonRadial extends React.Component { 
     constructor(props){
@@ -93,7 +93,7 @@ class ComparisonRadial extends React.Component {
 
   render(){
     return (
-      <div>
+      <div className={styles.chartContainer}>
         <Chart />
       </div>
     );
