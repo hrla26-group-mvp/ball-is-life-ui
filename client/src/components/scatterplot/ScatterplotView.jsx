@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Scatterplot } from './Scatterplot';
+import { ScatterplotContainer } from '../../containers/Scatterplot/ScatterplotContainer';
 import { ScatterplotFiltersList } from './ScatterplotFiltersList';
 import styles from '../../styles/scatterplot/ScatterplotView.css';
 
@@ -7,26 +7,22 @@ export class ScatterplotView extends Component {
   constructor(props) {
     super(props);
     this.ref = React.createRef();
-    this.stats = [];
   }
 
   componentDidMount() {
     this.stats = Object.keys(this.props.scatterplotData[0]);
   }
 
-  updateScatterplotData = () => {
-    return;
-  };
+  render = () => {
+    const stats = Object.keys(this.props.scatterplotData[0])
+      .filter(d => !['id', 'api_id', 'full_name', 'first_name', 'last_name', 'position', 'primary_position'].includes(d))
+      .map(stat => stat.split('_').map(word => word[0].toUpperCase() + word.slice(1)).join(' '));
 
-  render = () => (
-    <div className={styles.scatterplotview} ref={this.ref}>
-      <ScatterplotFiltersList
-        stats={this.stats}
-      />
-      <Scatterplot
-        scatterplotData={this.props.scatterplotData}
-        scatterplotViewRef={this.ref}
-      />
-    </div>
-  );
+    return (
+      <div className={styles.scatterplotview} ref={this.ref}>
+        <ScatterplotFiltersList stats={stats} />
+        <ScatterplotContainer />
+      </div>
+    );
+  };
 }

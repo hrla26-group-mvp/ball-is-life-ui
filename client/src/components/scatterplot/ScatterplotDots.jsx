@@ -7,7 +7,7 @@ export const ScatterplotDots = ({ scatterplotData, xScale, yScale, xStat, yStat 
       <ScatterplotDot
         cx={xScale(d[xStat]).toString()}
         cy={yScale(d[yStat]).toString()}
-        r={4}
+        r={4} // change to variable size?
         key={i}
       />
     ))}
