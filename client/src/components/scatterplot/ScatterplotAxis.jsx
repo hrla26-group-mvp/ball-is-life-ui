@@ -20,14 +20,23 @@ export class ScatterplotAxis extends Component {
     d3.select(node).call(axis);
   };
 
-  render = () => (
-    <g className="scatterplotaxiscontainer">
-      {this.props.orient === 'bottom' ?
-        <text transform={`translate(${this.props.width / 2}, ${this.props.height})`}>{this.props.stat}</text>
-      : this.props.orient === 'left' ?
-        <text x={this.props.padding} y={`${this.props.height / 2}`}>{this.props.stat}</text>
-      : null}
-      <g className="scatterplotaxis" ref="axis" transform={this.props.translate} />
-    </g>
-  );
+  render = () => {
+    const { orient, translate, padding, width, height, stat } = this.props;
+
+    return (
+      <g className="scatterplotaxiscontainer">
+        {orient === 'bottom' ?
+          <text transform={`translate(${width / 2}, ${height})`}>{stat}</text>
+        : orient === 'left' ?
+          <text
+            transform={`rotate(-90)`}
+            x={`${0 - height / 2}`}
+            y={`${padding / 2}`}
+          >{stat}</text>
+        : null}
+        <g className="scatterplotaxis" ref="axis" transform={translate} />
+      </g>
+    );
+  };
 }
+
