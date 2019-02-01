@@ -1,9 +1,9 @@
 import { GET_VIDEOS, CURRENT_VIDEO } from '../actions/actionTypes';
 
-export const videos = (state = { videos: [], currentVideo: {} }, action) => {
+export const videos = (state = [], action) => {
   switch (action.type) {
     case GET_VIDEOS:
-      return { videos: action.videos, currentVideo: action.videos[0] };
+      return action.videos;
     default:
       return state;
   }
@@ -12,7 +12,7 @@ export const videos = (state = { videos: [], currentVideo: {} }, action) => {
 export const currentVideo = (state = {}, action) => {
   switch (action.type) {
     case CURRENT_VIDEO:
-      return { currentVideo: action.video };
+      return action.video;
     default:
       return state;
   }
