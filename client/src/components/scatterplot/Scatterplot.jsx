@@ -10,8 +10,8 @@ export class Scatterplot extends Component {
     this.ref = React.createRef();
     this.state = {
       padding: 50,
-      width: 800,
-      height: 600,
+      width: 0,
+      height: 0,
     };
 
     this.xStat = 'turnovers_per_game';
