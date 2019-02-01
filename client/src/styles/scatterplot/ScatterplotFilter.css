@@ -8,11 +8,11 @@
 
 .scatterplotfiltername {
   /* border: solid black 1px; */
-  margin: 5px 5px 5px 5px;
+  margin: 5px 5px 5px 10px;
 }
 
 .scatterplotfilterselect {
   /* border: solid black 1px; */
   width: 80%;
-  margin: 5px 5px 5px 5px;
+  margin: 5px 5px 5px 10px;
 }

@@ -16,26 +16,6 @@ export class Scatterplot extends Component {
       width: 0,
       height: 0,
     };
-
-    this.xStat = 'turnovers_per_game';
-    this.yStat = 'assists_per_game';
-
-    this.xMin = data => d3.min(data, d => d[this.xStat]);
-    this.xMax = data => d3.max(data, d => d[this.xStat]);
-    this.yMax = data => d3.max(data, d => d[this.yStat]);
-    this.yMin = data => d3.min(data, d => d[this.yStat]);
-
-    this.xScale = data => (
-      d3.scaleLinear()
-        .domain([this.xMin(data), this.xMax(data)])
-        .range([this.state.lPadding, this.state.width - this.state.rPadding])
-    );
-
-    this.yScale = data => (
-      d3.scaleLinear()
-        .domain([this.yMin(data), this.yMax(data)])
-        .range([this.state.height - this.state.bPadding, this.state.tPadding])
-    );
   }
 
   updateDimensions = () => {
@@ -50,9 +30,26 @@ export class Scatterplot extends Component {
   }
 
   render = () => {
+    const { ref } = this;
     const { scatterplotData, xStat, yStat } = this.props;
-    const { ref, xScale, yScale } = this;
     const { lPadding, rPadding, tPadding, bPadding, width, height } = this.state;
+
+    const xMin = data => d3.min(data, d => parseFloat(d[xStat]));
+    const xMax = data => d3.max(data, d => parseFloat(d[xStat]));
+    const yMin = data => d3.min(data, d => parseFloat(d[yStat]));
+    const yMax = data => d3.max(data, d => parseFloat(d[yStat]));
+
+    const xScale = data => (
+      d3.scaleLinear()
+        .domain([xMin(data), xMax(data)])
+        .range([lPadding, width - rPadding])
+    );
+
+    const yScale = data => (
+      d3.scaleLinear()
+        .domain([yMin(data), yMax(data)])
+        .range([height - bPadding, tPadding])
+    );
 
     return (
       <div className={styles.scatterplot}>
