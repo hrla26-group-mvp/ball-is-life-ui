@@ -2,6 +2,7 @@ import { combineReducers } from 'redux';
 import { fullscreen, view } from './NavbarReducers';
 import { scatterplotData } from './ScatterplotReducers';
 import { comparisonData, playerData } from './ComparisonReducers';
+import { videos } from './videoReducer';
 
 export const rootReducer = combineReducers({
   fullscreen,
@@ -9,4 +10,5 @@ export const rootReducer = combineReducers({
   scatterplotData,
   comparisonData,
   playerData,
+  videos,
 });
