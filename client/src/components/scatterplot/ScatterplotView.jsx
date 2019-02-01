@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ScatterplotContainer } from '../../containers/Scatterplot/ScatterplotContainer';
+import { Scatterplot } from '../../components/scatterplot/Scatterplot';
 import { ScatterplotFiltersList } from './ScatterplotFiltersList';
 import styles from '../../styles/scatterplot/ScatterplotView.css';
 
@@ -10,6 +10,7 @@ export class ScatterplotView extends Component {
   }
 
   render = () => {
+    const { scatterplotData, playerData, xStat, yStat, updateScatterplotData } = this.props;
     const stats = Object.keys(this.props.scatterplotData[0])
       .filter(field => !['id', 'api_id', 'full_name', 'first_name', 'last_name', 'position', 'primary_position'].includes(field))
       .map(stat => stat.split('_').map(word => word[0].toUpperCase() + word.slice(1)).join(' '));
@@ -21,7 +22,13 @@ export class ScatterplotView extends Component {
           updateXStat={this.props.updateScatterplotXStat}
           updateYStat={this.props.updateScatterplotYStat}
         />
-        <ScatterplotContainer />
+        <Scatterplot
+          scatterplotData={scatterplotData}
+          playerData={playerData}
+          xStat={xStat}
+          yStat={yStat}
+          updateScatterplotData={updateScatterplotData}
+        />
       </div>
     );
   };

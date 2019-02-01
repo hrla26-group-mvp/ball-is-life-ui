@@ -6,14 +6,16 @@ export class ScatterplotAxis extends Component {
   componentDidUpdate = () => { this.renderAxis(); };
 
   renderAxis = () => {
-    let node = this.refs.axis;
-    let axis =
-      this.props.orient === 'bottom' ?
-        d3.axisBottom(this.props.scale)
+    const node = this.refs.axis;
+    const { orient, scale } = this.props;
+
+    const axis =
+      orient === 'bottom' ?
+        d3.axisBottom(scale)
           .ticks(5)
           .tickFormat(d => d.toString())
-      : this.props.orient === 'left' ?
-        d3.axisLeft(this.props.scale)
+      : orient === 'left' ?
+        d3.axisLeft(scale)
           .ticks(5)
       : null;
 
@@ -21,23 +23,22 @@ export class ScatterplotAxis extends Component {
   };
 
   render = () => {
-    let { orient, translate, padding, width, height, stat } = this.props;
-    stat = stat.split('_').map(s => s[0].toUpperCase() + s.slice(1)).join(' ');
+    const { orient, translate, padding, width, height, stat } = this.props;
+    const statFormatted = stat.split('_').map(s => s[0].toUpperCase() + s.slice(1)).join(' ');
 
     return (
       <g className="scatterplotaxiscontainer">
         {orient === 'bottom' ?
-          <text transform={`translate(${width / 2}, ${height - padding / 3})`}>{stat}</text>
+          <text transform={`translate(${width / 2}, ${height - padding / 3})`}>{statFormatted}</text>
         : orient === 'left' ?
           <text
             transform={`rotate(-90)`}
             x={`${0 - height / 2}`}
             y={`${padding / 2}`}
-          >{stat}</text>
+          >{statFormatted}</text>
         : null}
         <g className="scatterplotaxis" ref="axis" transform={translate} />
       </g>
     );
   };
 }
-

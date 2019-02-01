@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import { ScatterplotView } from '../../components/scatterplot/ScatterplotView';
-import { updateScatterplotData, updateScatterplotXStat, updateScatterplotYStat } from '../../actions/Scatterplot';
+import { ScatterplotView } from '../components/scatterplot/ScatterplotView';
+import { updateScatterplotData, updateScatterplotXStat, updateScatterplotYStat } from '../actions/Scatterplot';
 
 const mapStateToProps = state => ({
   scatterplotData: state.scatterplotData,

@@ -9,7 +9,7 @@ export const scatterplotData = (state = [], action) => {
   }
 };
 
-export const xStat = (state = 'turnovers_per_game', action) => {
+export const xStat = (state = 'games_played', action) => {
   switch (action.type) {
     case UPDATE_X_STAT:
       return action.xStat;
@@ -18,7 +18,7 @@ export const xStat = (state = 'turnovers_per_game', action) => {
   }
 };
 
-export const yStat = (state = 'assists_per_game', action) => {
+export const yStat = (state = 'games_played', action) => {
   switch (action.type) {
     case UPDATE_Y_STAT:
       return action.yStat;
