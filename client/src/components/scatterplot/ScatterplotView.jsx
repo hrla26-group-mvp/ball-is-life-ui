@@ -9,18 +9,18 @@ export class ScatterplotView extends Component {
     this.ref = React.createRef();
   }
 
-  componentDidMount() {
-    this.stats = Object.keys(this.props.scatterplotData[0]);
-  }
-
   render = () => {
     const stats = Object.keys(this.props.scatterplotData[0])
-      .filter(d => !['id', 'api_id', 'full_name', 'first_name', 'last_name', 'position', 'primary_position'].includes(d))
+      .filter(field => !['id', 'api_id', 'full_name', 'first_name', 'last_name', 'position', 'primary_position'].includes(field))
       .map(stat => stat.split('_').map(word => word[0].toUpperCase() + word.slice(1)).join(' '));
-
+    
     return (
       <div className={styles.scatterplotview} ref={this.ref}>
-        <ScatterplotFiltersList stats={stats} />
+        <ScatterplotFiltersList
+          stats={stats}
+          updateXStat={this.props.updateScatterplotXStat}
+          updateYStat={this.props.updateScatterplotYStat}
+        />
         <ScatterplotContainer />
       </div>
     );
