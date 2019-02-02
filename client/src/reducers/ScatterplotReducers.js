@@ -1,19 +1,9 @@
 import {
-  UPDATE_SCATTERPLOT_DATA,
   UPDATE_X_STAT,
   UPDATE_Y_STAT,
   UPDATE_POSITION_FILTERS,
   UPDATE_TEAM_FILTERS,
 } from '../actions/actionTypes';
-
-export const scatterplotData = (state = [], action) => {
-  switch (action.type) {
-    case UPDATE_SCATTERPLOT_DATA:
-      return action.scatterplotData;
-    default:
-      return state;
-  }
-};
 
 export const xStat = (state = 'games_played', action) => {
   switch (action.type) {
@@ -33,7 +23,8 @@ export const yStat = (state = 'games_played', action) => {
   }
 };
 
-const allPositions = ['PG', 'SG', 'SF', 'PF', 'C'];
+export const allPositions = ['PG', 'SG', 'SF', 'PF', 'C'];
+
 export const positionFilters = (state = allPositions, action) => {
   switch (action.type) {
     case UPDATE_POSITION_FILTERS:
@@ -43,7 +34,8 @@ export const positionFilters = (state = allPositions, action) => {
   }
 };
 
-const allTeams = ['Mavericks', 'Clippers', 'Nets', 'Kings', 'Spurs', 'Timberwolves', 'Cavaliers', 'Bucks', 'Hornets', 'Pelicans', 'Pistons', 'Celtics', 'Magic', 'Rockets', 'Pacers', 'Bulls', 'Wizards', 'Thunder', 'Jazz', 'Warriors', '76ers', 'Suns', 'Heat', 'Lakers', 'Trail Blazers', 'Grizzlies', 'Knicks', 'Nuggets', 'Raptors', 'Hawks'];
+export const allTeams = ['Mavericks', 'Clippers', 'Nets', 'Kings', 'Spurs', 'Timberwolves', 'Cavaliers', 'Bucks', 'Hornets', 'Pelicans', 'Pistons', 'Celtics', 'Magic', 'Rockets', 'Pacers', 'Bulls', 'Wizards', 'Thunder', 'Jazz', 'Warriors', '76ers', 'Suns', 'Heat', 'Lakers', 'Trail Blazers', 'Grizzlies', 'Knicks', 'Nuggets', 'Raptors', 'Hawks'];
+
 export const teamFilters = (state = allTeams, action) => {
   switch (action.type) {
     case UPDATE_TEAM_FILTERS:

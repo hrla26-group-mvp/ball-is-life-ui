@@ -6,17 +6,7 @@ export const ScatterplotFilterOption = ({ value, filters, updateFilters }) => (
     <input
       type="checkbox"
       className={styles.checkbox}
-      onClick={(e) => {
-        if (e.target.checked) {
-          const newFilter = e.target.parentElement.innerText;
-          const newFiltersList = [...new Set([...filters, newFilter])];
-          updateFilters(newFiltersList);
-        } else {
-          const filterToRemove = e.target.parentElement.innerText;
-          const newFiltersList = filters.filter(a => a !== filterToRemove);
-          updateFilters(newFiltersList);
-        }
-      }}
+      onClick={updateFilters}
     />
     {value}
   </div>
