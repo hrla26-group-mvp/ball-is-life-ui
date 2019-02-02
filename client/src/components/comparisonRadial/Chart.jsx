@@ -31,28 +31,31 @@ class Chart extends React.Component {
         { name: 'rebounds per game', data: 8 },
         { name: 'freethrows per game', data: 9 },
       ],
-      width: 800,
+      width: 700,
       height: 500,
     };
   }
 
   componentDidMount() {
     this.rescale();
-    window.addEventListener('resize', this.rescale);
+    window.addEventListener('resize', this.rescale());
   }
 
+
   rescale() {
+    console.log('hello')
     // console.log(this.myRef.current.clientWidth)
     // console.log(this.myRef.current.clientHeight)
+    // console.log('hello', this.myRef, 'width picking up?');
     this.setState({
       width: this.myRef.current.clientWidth > 800 ? this.myRef.current.clientWidth : 800,
       height: this.myRef.current.clientHeight > 400 ? this.myRef.current.clientHeight : 500,
     });
   }
-
+  
   render() {
     const margins = {
-      top: 50, right: 50, bottom: 50, left: 150,
+      top: this.state.height * 0.1, right: this.state.width * 0.1, bottom: this.state.height * 0.1, left: this.state.width * 0.15,
     };
     const svgDimensions = {
       width: this.state.width,
@@ -66,9 +69,8 @@ class Chart extends React.Component {
       // .range([margins.bottom, svgDimensions.height - margins.top]);
     const xScale = this.xScale
       .domain([0, 40])
-      .range([0, svgDimensions.width - margins.right - margins.left]);
+      .range([margins.left, svgDimensions.width - margins.right]);
       // .range([margins.left, svgDimensions.width - margins.right]);
-
     return (
       <div className={styles.svgContainer}>
         <svg width="95%" height="95%" ref={this.myRef}>

@@ -15,6 +15,7 @@ export default class Axis extends React.Component {
 
   renderAxis() {
     const axisType = `axis${this.props.orient}`
+    console.log(axisType, 'axistype is ')
     const axis = d3Axis[axisType]()
       .scale(this.props.scale)
       .tickSize(-this.props.tickSize) // negative so itll draw inside

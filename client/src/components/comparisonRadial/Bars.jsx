@@ -20,12 +20,12 @@ export default class Bars extends Component {
     const bars = data.map(each => (
       <rect
         key={each.name}
-        x={xScale(0)}
+        x={margins.left}
         y={yScale(each.name)}
         height={yScale.bandwidth()}
         // height={width - margins.right - margins.left - scales.xScale(each.data)}
-        // width={width - margins.right - margins.left - scales.xScale(each.data)}
-        width={scales.xScale(each.data)}
+        // width={20}
+        width={xScale(each.data)}
         fill={this.colorScale(each.data)}
       />
     ));
