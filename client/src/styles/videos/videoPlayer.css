@@ -1,23 +1,28 @@
 .videoPlayer {
-  display:flex;
-  justify-content: center;
+  /* display:flex;
+  justify-content: center; */
   position: relative;
-	padding-bottom: 56.25%; /* 16:9 */
-	padding-top: 25px;
+  padding-bottom: 22%; 
+  /* 16:9 */
+  padding-top: 25px;
 	height: 0;
 }
 
+/* 
 .imageHide {
   display:block;
 }
 .imageHide:hover {
   display: none;
-}
+} */
 
 .videoPlayer iframe {
   position: absolute;
-	top: 0;
+  top: 0;
+  left: 0;
+	/* top: 0;
 	left: 0;
-	width: 100%;
-	height: 100%;
+	width: 70%;
+  height: 70%; */
+  border: none;
 }
