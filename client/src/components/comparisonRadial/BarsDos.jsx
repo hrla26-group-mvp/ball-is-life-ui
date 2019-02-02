@@ -23,7 +23,7 @@ export default class BarsDos extends React.Component {
       <rect
         key={each.name}
         x={margins.left}
-        y={yScale(each.name) + 19}
+        y={yScale(each.name) + width * 0.04}
         height={yScale.bandwidth() / 4}
         // height={width - margins.right - margins.left - scales.xScale(each.data)}
         // width={20}

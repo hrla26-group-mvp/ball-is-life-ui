@@ -13,26 +13,9 @@ class Chart extends React.Component {
     this.myRef = React.createRef();
     this.rescale = this.rescale.bind(this);
     this.state = {
-      playerOne: [
-        { name: 'assists per game', data: 2 },
-        { name: 'blocks per game', data: 3.4 },
-        { name: 'field goals per game', data: 17 },
-        { name: 'three points per game', data: 9 },
-        { name: 'two points per game', data: 34 },
-        { name: 'rebounds per game', data: 5 },
-        { name: 'freethrows per game', data: 9 },
-      ],
-      playerTwo: [
-        { name: 'assists per game', data: 12 },
-        { name: 'blocks per game', data: 5 },
-        { name: 'field goals per game', data: 10 },
-        { name: 'three points per game', data: 20 },
-        { name: 'two points per game', data: 29 },
-        { name: 'rebounds per game', data: 8 },
-        { name: 'freethrows per game', data: 9 },
-      ],
       width: 800,
       height: 500,
+      hoveredBar: '',
     };
   }
 
@@ -40,7 +23,9 @@ class Chart extends React.Component {
     this.rescale();
     window.addEventListener('resize', this.rescale());
   }
-
+  componentDidUpdate() {
+    console.log(this.state.hoveredBar, 'is it showing up??');
+  }
 
   rescale() {
     // console.log(this.myRef.current.clientWidth)
@@ -62,10 +47,10 @@ class Chart extends React.Component {
       width: this.state.width,
       height: this.state.height,
     };
-    const maxValue = Math.max(...this.state.playerOne.map(d => d.data));
+    const maxValue = Math.max(...this.props.playerOne.map(d => d.data));
     const yScale = this.yScale
       .padding(0.1)
-      .domain(this.state.playerOne.map(d => d.name))
+      .domain(this.props.playerOne.map(d => d.name))
       .rangeRound([margins.bottom, svgDimensions.height - margins.top]);
     // const yScale2 = this.yScale
     //   .padding(0.05)
@@ -87,14 +72,16 @@ class Chart extends React.Component {
           <Bars
             scales={{ xScale, yScale }}
             margins={margins}
-            data={this.state.playerOne}
+            data={this.props.playerOne}
             maxValue={maxValue}
             svgDimensions={svgDimensions}
+            onMouseOverCallback={each => this.setState({ hoveredBar: each })} //FIX THIS REDUX IT 
+            // onMouseOutCallback={() => this.setState({hoveredBar: null})}
           />
           <BarsDos
             scales={{ xScale, yScale }}
             margins={margins}
-            data={this.state.playerTwo}
+            data={this.props.playerTwo}
             maxValue={maxValue}
             svgDimensions={svgDimensions}
           />

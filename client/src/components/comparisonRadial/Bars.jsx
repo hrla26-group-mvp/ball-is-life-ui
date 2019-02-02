@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { scaleLinear } from 'd3';
 import { interpolateLab } from 'd3';
+import * as d3 from 'd3';
 
 export default class Bars extends Component {
   constructor(props) {
@@ -23,12 +24,20 @@ export default class Bars extends Component {
       <rect
         key={each.name}
         x={margins.left}
-        y={yScale(each.name) + 39 }
+        y={yScale(each.name) + width * 0.01}
         height={yScale.bandwidth() / 4}
         // height={width - margins.right - margins.left - scales.xScale(each.data)}
         // width={20}
         width={xScale(each.data) - margins.left}
         fill={this.colorScale(each.data)}
+        onMouseOver={() => d3.select(bars).attr("fill", "red")}
+        onFocus={() => undefined}
+        onMouseOut={() => d3.select(this).attr("r", 5.5).style("fill", "#fff8ee")}
+        onBlur={() => undefined}
+        // onMouseOver={() => this.props.onMouseOverCallback(each.name)}
+        // onFocus={() => undefined}
+
+        // onMouseOut={() => this.props.onMouseOutCallback(null)}
       />
     ));
     return (
