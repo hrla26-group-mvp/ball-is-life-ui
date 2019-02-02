@@ -16,18 +16,18 @@ export default class Bars extends Component {
     const { scales, margins, data, svgDimensions } = this.props;
     const { xScale, yScale } = scales;
     const { width, height } = svgDimensions;
-    console.log(xScale(2), '20 xscaled is this');
-    console.log(xScale(40), '40 xscaled is this');
-    console.log(margins.left, 'margin left');
+    // console.log(xScale(2), '20 xscaled is this');
+    // console.log(xScale(40), '40 xscaled is this');
+    // console.log(margins.left, 'margin left');
     const bars = data.map(each => (
       <rect
         key={each.name}
         x={margins.left}
-        y={yScale(each.name)}
-        height={yScale.bandwidth()}
+        y={yScale(each.name) + 39 }
+        height={yScale.bandwidth() / 4}
         // height={width - margins.right - margins.left - scales.xScale(each.data)}
         // width={20}
-        width={xScale(each.data)}
+        width={xScale(each.data) - margins.left}
         fill={this.colorScale(each.data)}
       />
     ));

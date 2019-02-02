@@ -64,9 +64,13 @@ class Chart extends React.Component {
     };
     const maxValue = Math.max(...this.state.playerOne.map(d => d.data));
     const yScale = this.yScale
-      .padding(0.5)
+      .padding(0.1)
       .domain(this.state.playerOne.map(d => d.name))
-      .range([margins.bottom, svgDimensions.height - margins.top]);
+      .rangeRound([margins.bottom, svgDimensions.height - margins.top]);
+    // const yScale2 = this.yScale
+    //   .padding(0.05)
+    //   .domain(this.state.playerOne.map(d => d.name))
+    //   .rangeRound([0, yScale.bandwidth()]);
     const xScale = this.xScale
       .domain([0, maxValue + 10])
       .range([margins.left, svgDimensions.width - margins.right]);
@@ -74,7 +78,7 @@ class Chart extends React.Component {
       // console.log(svgDimensions.width, 'width of svg is')
     return (
       <div className={styles.svgContainer}>
-        <svg width="95%" height="95%" ref={this.myRef}>
+        <svg width="100%" height="100%" ref={this.myRef}>
           <Axes
             scales={{ xScale, yScale }}
             margins={margins}
@@ -87,13 +91,13 @@ class Chart extends React.Component {
             maxValue={maxValue}
             svgDimensions={svgDimensions}
           />
-          {/* <BarsDos
+          <BarsDos
             scales={{ xScale, yScale }}
             margins={margins}
             data={this.state.playerTwo}
             maxValue={maxValue}
             svgDimensions={svgDimensions}
-          /> */}
+          />
         </svg>
       </div>
     );
