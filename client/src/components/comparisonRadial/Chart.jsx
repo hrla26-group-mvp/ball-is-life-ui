@@ -31,7 +31,7 @@ class Chart extends React.Component {
         { name: 'rebounds per game', data: 8 },
         { name: 'freethrows per game', data: 9 },
       ],
-      width: 700,
+      width: 800,
       height: 500,
     };
   }
@@ -43,20 +43,21 @@ class Chart extends React.Component {
 
 
   rescale() {
-    console.log('hello')
     // console.log(this.myRef.current.clientWidth)
     // console.log(this.myRef.current.clientHeight)
-    // console.log('hello', this.myRef, 'width picking up?');
+    // console.log('hello', this.myRef.current.clientHeight, 'height picking up?');
+
     this.setState({
       width: this.myRef.current.clientWidth > 800 ? this.myRef.current.clientWidth : 800,
       height: this.myRef.current.clientHeight > 400 ? this.myRef.current.clientHeight : 500,
     });
   }
-  
+
   render() {
     const margins = {
       top: this.state.height * 0.1, right: this.state.width * 0.1, bottom: this.state.height * 0.1, left: this.state.width * 0.15,
     };
+    console.log(margins, 'margin obj');
     const svgDimensions = {
       width: this.state.width,
       height: this.state.height,
@@ -66,11 +67,11 @@ class Chart extends React.Component {
       .padding(0.5)
       .domain(this.state.playerOne.map(d => d.name))
       .range([margins.bottom, svgDimensions.height - margins.top]);
-      // .range([margins.bottom, svgDimensions.height - margins.top]);
     const xScale = this.xScale
       .domain([0, 40])
       .range([margins.left, svgDimensions.width - margins.right]);
-      // .range([margins.left, svgDimensions.width - margins.right]);
+      // console.log(margins.left, 'margins left', margins.right, 'marginsright')
+      // console.log(svgDimensions.width, 'width of svg is')
     return (
       <div className={styles.svgContainer}>
         <svg width="95%" height="95%" ref={this.myRef}>

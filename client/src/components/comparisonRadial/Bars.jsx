@@ -16,7 +16,9 @@ export default class Bars extends Component {
     const { scales, margins, data, svgDimensions } = this.props;
     const { xScale, yScale } = scales;
     const { width, height } = svgDimensions;
-
+    console.log(xScale(2), '20 xscaled is this');
+    console.log(xScale(40), '40 xscaled is this');
+    console.log(margins.left, 'margin left');
     const bars = data.map(each => (
       <rect
         key={each.name}
