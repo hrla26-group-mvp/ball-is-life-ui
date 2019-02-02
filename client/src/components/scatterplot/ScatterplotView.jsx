@@ -12,10 +12,10 @@ export class ScatterplotView extends Component {
   render = () => {
     const { scatterplotData, playerData, xStat, yStat, updateScatterplotData, updateScatterplotXStat, updateScatterplotYStat } = this.props;
     const stats = Object.keys(scatterplotData[0])
-      .filter(field => !['id', 'api_id', 'full_name', 'first_name', 'last_name', 'position', 'primary_position'].includes(field))
+      .filter(field => !['id', 'api_id', 'team_name', 'team_market', 'full_name', 'first_name', 'last_name', 'position', 'primary_position'].includes(field))
       .map(stat => stat.split('_').map(word => word[0].toUpperCase() + word.slice(1)).join(' '));
-    const positions = [...new Set(playerData.map(p => p.primary_position))];
-    const teams = [...new Set(playerData.map(p => p.team))];
+    const positions = [...new Set(playerData.map(p => p.primary_position === 'NA' ? 'SF' : p.primary_position))]; // manually set 1 'NA' to 'SF'
+    const teams = [...new Set(playerData.map(p => p.team_name))];
 
     return (
       <div className={styles.scatterplotview} ref={this.ref}>

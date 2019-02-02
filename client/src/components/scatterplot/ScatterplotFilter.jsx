@@ -24,6 +24,7 @@ export const ScatterplotFilter = ({ name, values, updateScatterplotData, playerD
     </div>
     <select
       multiple
+      size={Math.min(values.length, 10)}
       className={styles.scatterplotfilterselect}
       onChange={(e) => {
         const selections = [...e.target.selectedOptions].map(s => s.text);
@@ -31,7 +32,7 @@ export const ScatterplotFilter = ({ name, values, updateScatterplotData, playerD
           name === 'Position(s)' ?
             'primary_position'
           : name === 'Team(s)' ?
-            'team'
+            'team_name'
           : null;
         const updatedData = playerData.filter(player => selections.includes(player[field]));
         updateScatterplotData(updatedData);
