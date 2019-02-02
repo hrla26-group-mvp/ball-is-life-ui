@@ -4,6 +4,7 @@
   width: auto;
   height: 100vh;
   overflow: auto;
+  font-family: 'Roboto', sans-serif;
 }
 
 .currentviewcontainer {
@@ -12,10 +13,11 @@
   width: 80%;
   height: 100vh;
   overflow: auto;
+  background-color:#E5E7E9;
 }
 
 .navbarContainer {
-  background-color: #1d1e22;
+  background-color: #1D428A;
   width: auto;
   height: 100vh;
   overflow: auto;

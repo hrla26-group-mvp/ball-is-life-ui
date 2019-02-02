@@ -1,6 +1,5 @@
 .base {
   overflow: auto;
-  background-color: #1d1e22;
   height: auto;
 }
 
@@ -10,16 +9,15 @@ h2 {
 }
 
 .navbar {
-  background-color: #1d1e22;
 }
 
 .button {
+  background-color: #1D428A;
   border: none;
   margin-top: 1em;
   margin-bottom: 1em;
-  background-color: #1d1e22;
   color: #d4d4dc;
-  font-size: 24px;
+  font-size: 16px;
   opacity: 0.4;
   cursor: pointer;
 }
@@ -46,14 +44,13 @@ h2 {
 }
 
 .fullscreenButton {
+  background-color: #1D428A;
   border: none;
   cursor: pointer;
-  background-color: #1d1e22;
   color: #d4d4dc;
 }
 
 .fullscreen {
-  background-color: #1d1e22;
   width: 5%;
   font-family: 'Roboto', sans-serif;
 }
@@ -68,8 +65,11 @@ h2 {
 }
 
 .container {
+  background-color: #1D428A;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: flex-start;
   font-family: 'Roboto', sans-serif;
+  font-weight: 300;
 }

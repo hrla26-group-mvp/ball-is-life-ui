@@ -5,11 +5,23 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  color: #d4d4dc;
+  color: #7395AE;
 }
 
 .mainTitle {
   margin-left: 2em;
   margin-right: 1em;
   font-family: 'Roboto', sans-serif;
+}
+
+.videoPlayer {
+  padding-bottom: 1em;
+}
+
+.itemContainer {
+  padding-top:1em;
+  padding-bottom: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
