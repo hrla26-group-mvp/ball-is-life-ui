@@ -1,5 +1,8 @@
 import React from 'react';
 import Chart from './Chart.jsx';
+import ArcOne from './ArcOne.jsx';
+import ArcTwo from './ArcTwo.jsx';
+import Input from './Input.jsx';
 import styles from '../../styles/comparison/Comparison.css';
 
 class ComparisonRadial extends React.Component { 
@@ -24,13 +27,28 @@ class ComparisonRadial extends React.Component {
           { name: 'rebounds per game', data: 8 },
           { name: 'freethrows per game', data: 9 },
         ],
-        hovered: 'assists'
+        hoveredBar: 'blocks per game',
       };
     };
+  // onMouseOverCallback (each) {
+  //   this.setState({
+  //     hoveredBar: each
+  //   })
+  // }
+
   render(){
+    const playerOneSelected = this.state.playerOne.filter((curr) => 
+    curr.name === this.state.hoveredBar);
+    const playerTwoSelected = this.state.playerTwo.filter((curr) => 
+    curr.name === this.state.hoveredBar);
+    // console.log(playerOneSelected[0].data, 'playeroneseelcted')
+    // console.log(this.state.hovered, 'hovered')
     return (
       <div className={styles.chartContainer}>
-        <Chart hovered = {this.state.hovered} playerOne = {this.state.playerOne} playerTwo = {this.state.playerTwo} />
+        <Input /> 
+        <ArcOne playerOneSelected = {playerOneSelected[0].data} />
+        <ArcTwo playerTwoSelected = {playerTwoSelected[0].data} />
+        <Chart playerOne = {this.state.playerOne} playerTwo = {this.state.playerTwo} />
       </div>
     );
   }

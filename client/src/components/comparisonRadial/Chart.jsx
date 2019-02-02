@@ -23,9 +23,9 @@ class Chart extends React.Component {
     this.rescale();
     window.addEventListener('resize', this.rescale());
   }
-  componentDidUpdate() {
-    console.log(this.state.hoveredBar, 'is it showing up??');
-  }
+  // componentDidUpdate() {
+  //   console.log(this.state.hoveredBar, 'is it showing up??');
+  // }
 
   rescale() {
     // console.log(this.myRef.current.clientWidth)
@@ -39,6 +39,7 @@ class Chart extends React.Component {
   }
 
   render() {
+    console.log(this.state.hoveredBar, 'hoveredbar is ')
     const margins = {
       top: this.state.height * 0.1, right: this.state.width * 0.1, bottom: this.state.height * 0.1, left: this.state.width * 0.15,
     };
@@ -75,7 +76,7 @@ class Chart extends React.Component {
             data={this.props.playerOne}
             maxValue={maxValue}
             svgDimensions={svgDimensions}
-            onMouseOverCallback={each => this.setState({ hoveredBar: each })} //FIX THIS REDUX IT 
+            onMouseOverCallback={each => this.setState({ hoveredBar: each })}
             // onMouseOutCallback={() => this.setState({hoveredBar: null})}
           />
           <BarsDos
