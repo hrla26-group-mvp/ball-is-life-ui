@@ -1,0 +1,25 @@
+.itemContainer {
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.itemTitle {
+  padding-left: 0.5em;
+}
+
+.thumb {
+  cursor: pointer;
+}
+
+.itemThumbnail {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  float: left;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+.text {
+  cursor: pointer;
+}

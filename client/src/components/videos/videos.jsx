@@ -43,7 +43,7 @@ export default class Videos extends React.Component {
         </div>
         <div className={styles.itemContainer}>
           {videos.map(element => (
-            <VideoItem key={element.etag} video={element} changeCurrentVideo={changeCurrentVideo} title={element.snippet.title} thumbnail={element.snippet.thumbnails.default.url} description={element.snippet.description} />
+            <VideoItem key={element.etag} video={element} changeCurrentVideo={changeCurrentVideo} title={element.snippet.title} thumbnail={element.snippet.thumbnails.high.url} description={element.snippet.description} />
           ))}
         </div>
       </div>

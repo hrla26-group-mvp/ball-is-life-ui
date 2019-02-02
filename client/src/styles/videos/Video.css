@@ -1,6 +1,6 @@
 .videocontainer {
-  margin-left: 1.5em;
-  margin-right: 0.5em;
+  margin-left: 1em;
+  margin-right: 1em;
   padding-top: 1em;
   display: flex;
   flex-direction: column;
@@ -9,7 +9,7 @@
 }
 
 .mainTitle {
-  margin-left: 2em;
+  
   margin-right: 1em;
   font-family: 'Roboto', sans-serif;
 }
