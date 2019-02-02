@@ -1,5 +1,4 @@
 .scatterplotfilter {
-  /* border: solid black 1px; */
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -7,12 +6,10 @@
 }
 
 .scatterplotfiltername {
-  /* border: solid black 1px; */
-  margin: 5px 5px 5px 5px;
+  margin: 5px 5px 5px 10px;
 }
 
 .scatterplotfilterselect {
-  /* border: solid black 1px; */
   width: 80%;
-  margin: 5px 5px 5px 5px;
+  margin: 5px 5px 5px 10px;
 }

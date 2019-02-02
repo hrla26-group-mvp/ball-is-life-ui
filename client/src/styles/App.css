@@ -2,16 +2,21 @@
   border: solid black 1px;
   display: flex;
   width: auto;
-  height: 95vh;
+  height: 100vh;
+  overflow: auto;
 }
 
 .currentviewcontainer {
   border: solid black 1px;
   flex-grow: 1;
   width: 80%;
+  height: 100vh;
+  overflow: auto;
 }
 
 .navbarContainer {
   background-color: #1d1e22;
   width: auto;
+  height: 100vh;
+  overflow: auto;
 }
