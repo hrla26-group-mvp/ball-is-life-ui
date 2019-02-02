@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import { fullscreen, view } from './NavbarReducers';
-import { scatterplotData, xStat, yStat } from './ScatterplotReducers';
+import { scatterplotData, xStat, yStat, positionFilters, teamFilters } from './ScatterplotReducers';
 import { comparisonData, playerData } from './ComparisonReducers';
 import { videos, currentVideo } from './videoReducer';
 
@@ -10,6 +10,8 @@ export const rootReducer = combineReducers({
   scatterplotData,
   xStat,
   yStat,
+  positionFilters,
+  teamFilters,
   comparisonData,
   playerData,
   videos,

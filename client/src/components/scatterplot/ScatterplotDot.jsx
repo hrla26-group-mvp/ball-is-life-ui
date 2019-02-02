@@ -4,7 +4,10 @@ import styles from '../../styles/scatterplot/ScatterplotDot.css';
 export class ScatterplotDot extends Component {
   constructor(props) {
     super(props);
-    this.state = { hovered: false };
+    this.dotRef = React.createRef();
+    this.state = {
+      hovered: false,
+    };
   }
 
   handleMouseEnter = () => { this.setState({ hovered: true }); }
@@ -15,8 +18,16 @@ export class ScatterplotDot extends Component {
 
     return (
       <svg>
-        { this.state.hovered ? <text className="playernamelabel" x={(parseInt(cx) - 75).toString()} y={(parseInt(cy) - 10).toString()}>{playerName}</text> : null }
+        { this.state.hovered
+          ? <text
+            className="playernamelabel"
+            x={(parseInt(cx) - 75).toString()}
+            y={(parseInt(cy) - 10).toString()}
+            >{playerName}</text>
+          : null
+        }
         <circle
+          ref={this.dotRef}
           className={styles.scatterplotdot}
           cx={cx}
           cy={cy}
