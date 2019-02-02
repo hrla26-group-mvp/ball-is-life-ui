@@ -68,7 +68,7 @@ class Chart extends React.Component {
       .domain(this.state.playerOne.map(d => d.name))
       .range([margins.bottom, svgDimensions.height - margins.top]);
     const xScale = this.xScale
-      .domain([0, 40])
+      .domain([0, maxValue + 10])
       .range([margins.left, svgDimensions.width - margins.right]);
       // console.log(margins.left, 'margins left', margins.right, 'marginsright')
       // console.log(svgDimensions.width, 'width of svg is')
