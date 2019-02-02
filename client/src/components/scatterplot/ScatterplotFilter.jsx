@@ -1,4 +1,5 @@
 import React from 'react';
+import { ScatterplotFilterOption } from './ScatterplotFilterOption';
 import styles from '../../styles/scatterplot/ScatterplotFilter.css';
 
 export const ScatterplotAxisSelector = ({ name, values, updateStat }) => (
@@ -17,29 +18,21 @@ export const ScatterplotAxisSelector = ({ name, values, updateStat }) => (
   </div>
 );
 
-export const ScatterplotFilter = ({ name, values, updateScatterplotData, playerData }) => (
+export const ScatterplotFilter = ({ name, values, filters, updateFilters }) => (
   <div className={styles.scatterplotfilter}>
     <div className={styles.scatterplotfiltername}>
       {name}
     </div>
-    <select
-      multiple
-      className={styles.scatterplotfilterselect}
-      onChange={(e) => {
-        const selections = [...e.target.selectedOptions].map(s => s.text);
-        const field =
-          name === 'Position(s)' ?
-            'primary_position'
-          : name === 'Team(s)' ?
-            'team'
-          : null;
-        const updatedData = playerData.filter(player => selections.includes(player[field]));
-        updateScatterplotData(updatedData);
-      }}
-    >
+    <div className={styles.scatterplotoptionscontainer}>
       {values.map((value, i) => (
-        <option value={value} key={i}>{value}</option>
+        <ScatterplotFilterOption
+          name={name}
+          value={value}
+          key={i}
+          filters={filters}
+          updateFilters={updateFilters}
+        />
       ))}
-    </select>
+    </div>
   </div>
 );

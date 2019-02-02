@@ -19,8 +19,8 @@ export class Scatterplot extends Component {
   }
 
   updateDimensions = () => {
-    let width = Math.max(800, this.ref.current.clientWidth);
-    let height = Math.max(600, this.ref.current.clientHeight);
+    const width = Math.max(800, this.ref.current.clientWidth);
+    const height = Math.max(600, this.ref.current.clientHeight);
     this.setState({ width, height });
   };
 

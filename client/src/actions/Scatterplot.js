@@ -1,4 +1,10 @@
-import { UPDATE_SCATTERPLOT_DATA, UPDATE_X_STAT, UPDATE_Y_STAT } from './actionTypes';
+import {
+  UPDATE_SCATTERPLOT_DATA,
+  UPDATE_X_STAT,
+  UPDATE_Y_STAT,
+  UPDATE_POSITION_FILTERS,
+  UPDATE_TEAM_FILTERS,
+} from './actionTypes';
 
 export const updateScatterplotData = scatterplotData => ({
   type: UPDATE_SCATTERPLOT_DATA,
@@ -13,4 +19,14 @@ export const updateScatterplotXStat = xStat => ({
 export const updateScatterplotYStat = yStat => ({
   type: UPDATE_Y_STAT,
   yStat,
+});
+
+export const updateScatterplotPositionFilters = positionFilters => ({
+  type: UPDATE_POSITION_FILTERS,
+  positionFilters,
+});
+
+export const updateScatterplotTeamFilters = teamFilters => ({
+  type: UPDATE_TEAM_FILTERS,
+  teamFilters,
 });

@@ -9,6 +9,12 @@
   margin: 5px 5px 5px 10px;
 }
 
+.scatterplotoptionscontainer {
+  width: 80%;
+  margin: 5px 5px 5px 10px;
+  border: solid black 1px;
+}
+
 .scatterplotfilterselect {
   width: 80%;
   margin: 5px 5px 5px 10px;
