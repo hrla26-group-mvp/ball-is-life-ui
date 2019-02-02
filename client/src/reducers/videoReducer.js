@@ -9,10 +9,10 @@ export const videos = (state = [], action) => {
   }
 };
 
-export const currentVideo = (state = {}, action) => {
+export const currentVideo = (state = [], action) => {
   switch (action.type) {
     case CURRENT_VIDEO:
-      return action.video;
+      return [action.currentVideo];
     default:
       return state;
   }

@@ -5,7 +5,7 @@ export const getVideoData = videos => ({
   videos,
 });
 
-export const changeCurrentVideo = video => ({
+export const changeCurrentVideo = currentVideo => ({
   type: CURRENT_VIDEO,
-  video,
+  currentVideo,
 });
