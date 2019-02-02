@@ -12,20 +12,4 @@ export const VideoPlayer = ({ title, videoId, desc }) => (
       {desc}
     </div>
   </div>
-    // currentVideo === {} ? (<div> Please wait...</div>)
-    //   : (
-    //     <div>
-    //       <div>
-    //         {/* <iframe src={`https://www.youtube.com/embed/${currentVideo.id.videoId}`} allowFullScreen /> */}
-    //       </div>
-    //       <div>
-    //         <h3>
-    //           {currentVideo.snippet.title}
-    //         </h3>
-    //         <div>
-    //           {currentVideo.snippet.description}
-    //         </div>
-    //       </div>
-    //     </div>
-    //   )
 );

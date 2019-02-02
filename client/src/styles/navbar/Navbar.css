@@ -21,6 +21,7 @@ h2 {
   color: #d4d4dc;
   font-size: 24px;
   opacity: 0.4;
+  cursor: pointer;
 }
 
 .button:focus {
@@ -29,16 +30,19 @@ h2 {
   opacity:1;
   color: #d4d4dc;
   border-left-color: #FF4500;
+  cursor: pointer;
 }
 
 .button:hover {
   opacity: 1;
+  cursor: pointer;
 }
 
 .button:active {
   opacity:1;
   color: #d4d4dc;
   border-left-color: #FF4500;
+  cursor: pointer;
 }
 
 .fullscreenButton {

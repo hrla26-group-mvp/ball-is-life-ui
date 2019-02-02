@@ -34,10 +34,8 @@ export default class Videos extends React.Component {
   render() {
     const { videos, currentVideo, changeCurrentVideo } = this.props;
     return (
-      <div>
-        {console.log('got videos', videos)}
-        {console.log('currentvideo is ', currentVideo)}
-        <h3>Highlights</h3>
+      <div className={styles.videocontainer}>
+        <h2 className={styles.mainTitle}>Highlights</h2>
         <div>
           {currentVideo.map(element => (
             <VideoPlayer key={element.etag} title={element.snippet.title} videoId={element.id.videoId} desc={element.snippet.description} />

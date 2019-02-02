@@ -1,0 +1,15 @@
+.videocontainer {
+  margin-left: 1.5em;
+  margin-right: 0.5em;
+  padding-top: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: #d4d4dc;
+}
+
+.mainTitle {
+  margin-left: 2em;
+  margin-right: 1em;
+  font-family: 'Roboto', sans-serif;
+}
