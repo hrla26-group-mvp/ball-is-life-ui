@@ -26,8 +26,8 @@ export default class ArcOne extends Component {
 
   setContext() {
     return d3.select(this.refs.arc).append('svg')
-      .attr('height', '500px')
-      .attr('width', '500px')
+      .attr('height', '300px')
+      .attr('width', '300px')
       .attr('class', 'd3-arc')
       .append('g')
       .attr('transform', `translate(150, 150)`);
@@ -49,19 +49,6 @@ export default class ArcOne extends Component {
       .attr('d', this.arc());
   }
 
-  // resetText(context) {
-  //   return context.attr('text-anchor', 'middle')
-  //     .attr('d', 0)
-  //     .text(this.props.playerOneSelected)
-  //     .attr('transform', `translate(0, 15)`);
-  // }
-  // setForeground(context) {
-  //   return context.append('path')
-  //     .datum({ endAngle: Math.PI * 2 * 0.50 }) // percentage
-  //     .style('fill', '#ff0000')
-  //     .attr('d', this.arc());
-  // }
-
   arc() {
     return d3.arc()
       .innerRadius(60)
@@ -82,17 +69,10 @@ export default class ArcOne extends Component {
     this.setForeground(context);
     this.setText(context);
   }
-
-  // drawArc2() {
-  //   const context = this.setContext();
-  //   this.setBackground(context);
-  //   this.setForeground(context);
-  //   this.resetText(context);
-  // }
-
+  
   render() {
     return (
-      <svg width="300" height="300">
+      <svg width="250" height="250">
         <g ref="arc" fontFamily="Roboto Condensed" fontSize="40px" letterSpacing="5px" fill="#5B8BE3" />
       </svg>
     );

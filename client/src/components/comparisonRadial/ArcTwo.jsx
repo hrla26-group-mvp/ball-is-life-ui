@@ -48,12 +48,6 @@ export default class ArcTwo extends Component {
       .style('fill', '#ff0000')
       .attr('d', this.arc());
   }
-  // setForeground(context) {
-  //   return context.append('path')
-  //     .datum({ endAngle: Math.PI * 2 * 0.50 }) // percentage
-  //     .style('fill', '#ff0000')
-  //     .attr('d', this.arc());
-  // }
 
   arc() {
     return d3.arc()
@@ -78,7 +72,7 @@ export default class ArcTwo extends Component {
 
   render() {
     return(
-      <svg width="300" height="300">
+      <svg width="250" height="250">
         <g ref="arc2" fontFamily="Roboto Condensed" fontSize="40px" letterSpacing="5px" fill="#5B8BE3" />
       </svg>
     );
