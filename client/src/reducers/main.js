@@ -16,4 +16,5 @@ export const rootReducer = combineReducers({
   videos,
   currentVideo,
   hoveredData,
+  // updateSize, //add to above again
 });

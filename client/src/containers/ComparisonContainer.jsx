@@ -1,5 +1,9 @@
 import { connect } from 'react-redux';
-import { handlePlayerChoice, updateHoveredData } from '../actions/Comparison';
+import {
+  handlePlayerChoice,
+  updateHoveredData,
+  // updateSizeData
+} from '../actions/Comparison';
 import ComparisonRadial from '../components/comparisonRadial/ComparisonRadial';
 
 // this provides whatever is inside the container with state properties as props
@@ -10,6 +14,8 @@ const mapStateToProps = state => ({
   playerTwo: state.comparisonData.playerTwo,
   playerData: state.playerData,
   hoveredData: state.hoveredData,
+  // width: state.updateSize.width,
+  // height: state.updateSize.height,
 });
 
 // this provides whatever is inside the container with fns that update state by dispatching actions
@@ -19,6 +25,7 @@ const mapDispatchToProps = dispatch => ({
 // function that invokes dispatch on an action (created using action creator)
   handleChoice: (clickedPlayer, position) => { dispatch(handlePlayerChoice(clickedPlayer, position)); },
   updateHover: (hoveredData) => { dispatch(updateHoveredData(hoveredData)); },
+  // updateSize: (width, height) => { dispatch(updateSizeData(width, height)); },
 });
 
 const ComparisonRadialContainer = connect(mapStateToProps, mapDispatchToProps)(ComparisonRadial);

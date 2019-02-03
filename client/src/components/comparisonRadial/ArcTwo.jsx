@@ -25,7 +25,7 @@ export default class ArcTwo extends Component {
   }
 
   setContext() {
-    return d3.select(this.refs.arc).append('svg')
+    return d3.select(this.refs.arc2).append('svg')
       .attr('height', '500px')
       .attr('width', '500px')
       .attr('id', 'd3-arc2')
@@ -64,6 +64,7 @@ export default class ArcTwo extends Component {
 
   redrawArc() {
     const context = d3.select('#d3-arc2');
+    d3.select(this.refs.arc2).selectAll('text').remove();
     context.remove();
     this.drawArc();
   }
@@ -78,7 +79,7 @@ export default class ArcTwo extends Component {
   render() {
     return(
       <svg width="300" height="300">
-        <g ref="arc" fontFamily="Roboto Condensed" fontSize="40px" letterSpacing="5px" fill="#5B8BE3" />
+        <g ref="arc2" fontFamily="Roboto Condensed" fontSize="40px" letterSpacing="5px" fill="#5B8BE3" />
       </svg>
     );
   }

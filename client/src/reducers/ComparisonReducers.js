@@ -1,4 +1,9 @@
-import { UPDATE_PLAYER, UPDATE_PLAYER_DATA, UPDATE_HOVERED_DATA } from '../actions/actionTypes';
+import {
+  UPDATE_PLAYER,
+  UPDATE_PLAYER_DATA,
+  UPDATE_HOVERED_DATA,
+  // UPDATE_SIZE
+} from '../actions/actionTypes';
 
 export const comparisonData = (state = { playerOne: "LeBron James", playerTwo: "Stephen Curry" }, action) => {
   switch (action.type) {
@@ -28,3 +33,12 @@ export const hoveredData = (state = 'assists_per_game', action) => {
       return state;
   }
 };
+
+// export const updateSize = (state = { width: '800', height: '500' }, action) => {
+//   switch (action.type) {
+//     case UPDATE_SIZE:
+//       return { width: action.updateSize.width, height: action.updateSize.height };
+//     default:
+//       return state;
+//   }
+// };

@@ -28,7 +28,7 @@ export default class ArcOne extends Component {
     return d3.select(this.refs.arc).append('svg')
       .attr('height', '500px')
       .attr('width', '500px')
-      .attr('id', 'd3-arc')
+      .attr('class', 'd3-arc')
       .append('g')
       .attr('transform', `translate(150, 150)`);
   }
@@ -48,6 +48,13 @@ export default class ArcOne extends Component {
       .style('fill', '#ff0000')
       .attr('d', this.arc());
   }
+
+  // resetText(context) {
+  //   return context.attr('text-anchor', 'middle')
+  //     .attr('d', 0)
+  //     .text(this.props.playerOneSelected)
+  //     .attr('transform', `translate(0, 15)`);
+  // }
   // setForeground(context) {
   //   return context.append('path')
   //     .datum({ endAngle: Math.PI * 2 * 0.50 }) // percentage
@@ -63,7 +70,8 @@ export default class ArcOne extends Component {
   }
 
   redrawArc() {
-    const context = d3.select('#d3-arc');
+    const context = d3.select('.d3-arc');
+    d3.select(this.refs.arc).selectAll('text').remove();
     context.remove();
     this.drawArc();
   }
@@ -74,6 +82,13 @@ export default class ArcOne extends Component {
     this.setForeground(context);
     this.setText(context);
   }
+
+  // drawArc2() {
+  //   const context = this.setContext();
+  //   this.setBackground(context);
+  //   this.setForeground(context);
+  //   this.resetText(context);
+  // }
 
   render() {
     return (
