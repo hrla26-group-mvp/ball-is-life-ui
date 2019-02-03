@@ -29,6 +29,8 @@ export default class BarsDos extends React.Component {
         // width={20}
         width={xScale(each.data) - margins.left}
         fill={this.colorScale(each.data)}
+        onMouseOver={() => this.props.updateHover(each.name)}
+        onFocus={() => undefined}
       />
     ));
     return (

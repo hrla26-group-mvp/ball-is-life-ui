@@ -7,20 +7,16 @@ const Input = (props) => {
       <div className={styles.playerChoiceContainer}>
         <div className={styles.playerOneContainer}>
           <h1>Player One</h1>
-          <select className={styles.playerOneSelect} onChange={(e) => console.log(e.target.value)}>
-            <option value="Kobe">Kobe</option>
-            <option value="name">Test</option>
-            <option value="name">Test</option>
-            <option value="Fisher">Fisher</option>
+          <select className={styles.playerOneSelect} onChange={(e) => props.handleChoice(e.target.value, 1)}>
+            {props.playerData.map((value, i) => (
+              <option value={value.full_name} key={i}>{value.full_name}</option>))}
           </select>
         </div>
         <div className={styles.playerTwoContainer}>
           <h1>Player Two</h1>
-          <select className={styles.playerTwoSelect} onChange={(e) => console.log(e.target.value)}>
-            <option value="Kobe">Kobe</option>
-            <option value="name">Test</option>
-            <option value="name">Test</option>
-            <option value="Fisher">Fisher</option>
+          <select className={styles.playerTwoSelect} onChange={(e) => props.handleChoice(e.target.value, 2)}>
+            {props.playerData.map((value, i) => (
+              <option value={value.full_name} key={i}>{value.full_name}</option>))}
           </select>
         </div>
       </div>

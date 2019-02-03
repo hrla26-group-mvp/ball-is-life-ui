@@ -38,13 +38,13 @@ export default class ArcOne extends Component {
       .attr('text-anchor', 'middle')
       // .attr('class', 'styles.percent-complete')
       .attr('d', 0)
-      .text(this.props.playerOneSelected);
+      .text(this.props.playerOneSelected)
+      .attr('transform', `translate(0, 15)`);
   }
 
   setForeground(context) {
-    console.log(this.props.playerOneSelected, 'percent')
     return context.append('path')
-      .datum({ endAngle: Math.PI * 2 * (this.props.playerOneSelected/40) }) // percentage
+      .datum({ endAngle: Math.PI * 2 * (this.props.playerOneSelected/15) }) // percentage
       .style('fill', '#ff0000')
       .attr('d', this.arc());
   }
@@ -63,7 +63,7 @@ export default class ArcOne extends Component {
   }
 
   redrawArc() {
-    const context = d3.select(`#${this.props.id}`);
+    const context = d3.select('#d3-arc');
     context.remove();
     this.drawArc();
   }
@@ -76,7 +76,7 @@ export default class ArcOne extends Component {
   }
 
   render() {
-    return(
+    return (
       <svg width="300" height="300">
         <g ref="arc" fontFamily="Roboto Condensed" fontSize="40px" letterSpacing="5px" fill="#5B8BE3" />
       </svg>

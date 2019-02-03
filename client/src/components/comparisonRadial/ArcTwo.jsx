@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import * as d3 from 'd3';
+import styles from '../../styles/comparison/Comparison.css';
 
 export default class ArcTwo extends Component {
   componentDidMount() {
@@ -25,16 +26,25 @@ export default class ArcTwo extends Component {
 
   setContext() {
     return d3.select(this.refs.arc).append('svg')
-      .attr('height', '300px')
-      .attr('width', '300px')
-      .attr('id', 'd3-arc')
+      .attr('height', '500px')
+      .attr('width', '500px')
+      .attr('id', 'd3-arc2')
       .append('g')
       .attr('transform', `translate(150, 150)`);
   }
 
+  setText(context) {
+    return context.append('text')
+      .attr('text-anchor', 'middle')
+      // .attr('class', 'styles.percent-complete')
+      .attr('d', 0)
+      .text(this.props.playerTwoSelected)
+      .attr('transform', `translate(0, 15)`);
+  }
+
   setForeground(context) {
     return context.append('path')
-      .datum({ endAngle: Math.PI * 2 * (this.props.playerTwoSelected/40) }) // percentage
+      .datum({ endAngle: Math.PI * 2 * (this.props.playerTwoSelected/15) }) // percentage
       .style('fill', '#ff0000')
       .attr('d', this.arc());
   }
@@ -53,7 +63,7 @@ export default class ArcTwo extends Component {
   }
 
   redrawArc() {
-    const context = d3.select(`#${this.props.id}`);
+    const context = d3.select('#d3-arc2');
     context.remove();
     this.drawArc();
   }
@@ -62,12 +72,13 @@ export default class ArcTwo extends Component {
     const context = this.setContext();
     this.setBackground(context);
     this.setForeground(context);
+    this.setText(context);
   }
 
   render() {
     return(
       <svg width="300" height="300">
-        <g ref="arc"/>
+        <g ref="arc" fontFamily="Roboto Condensed" fontSize="40px" letterSpacing="5px" fill="#5B8BE3" />
       </svg>
     );
   }

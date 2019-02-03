@@ -39,7 +39,6 @@ class Chart extends React.Component {
   }
 
   render() {
-    console.log(this.state.hoveredBar, 'hoveredbar is ')
     const margins = {
       top: this.state.height * 0.1, right: this.state.width * 0.1, bottom: this.state.height * 0.1, left: this.state.width * 0.15,
     };
@@ -48,17 +47,18 @@ class Chart extends React.Component {
       width: this.state.width,
       height: this.state.height,
     };
-    const maxValue = Math.max(...this.props.playerOne.map(d => d.data));
+    // const maxValue = Math.max(...this.props.playerOneArr.map(d => d.data));
+    const maxValue = 15;
     const yScale = this.yScale
       .padding(0.1)
-      .domain(this.props.playerOne.map(d => d.name))
+      .domain(this.props.playerOneArr.map(d => d.name))
       .rangeRound([margins.bottom, svgDimensions.height - margins.top]);
     // const yScale2 = this.yScale
     //   .padding(0.05)
     //   .domain(this.state.playerOne.map(d => d.name))
     //   .rangeRound([0, yScale.bandwidth()]);
     const xScale = this.xScale
-      .domain([0, maxValue + 10])
+      .domain([0, maxValue])
       .range([margins.left, svgDimensions.width - margins.right]);
       // console.log(margins.left, 'margins left', margins.right, 'marginsright')
       // console.log(svgDimensions.width, 'width of svg is')
@@ -73,18 +73,20 @@ class Chart extends React.Component {
           <Bars
             scales={{ xScale, yScale }}
             margins={margins}
-            data={this.props.playerOne}
+            data={this.props.playerOneArr}
             maxValue={maxValue}
             svgDimensions={svgDimensions}
-            onMouseOverCallback={each => this.setState({ hoveredBar: each })}
+            updateHover={this.props.updateHover}
+            // onMouseOverCallback={each => this.setState({ hoveredBar: each })}
             // onMouseOutCallback={() => this.setState({hoveredBar: null})}
           />
           <BarsDos
             scales={{ xScale, yScale }}
             margins={margins}
-            data={this.props.playerTwo}
+            data={this.props.playerTwoArr}
             maxValue={maxValue}
             svgDimensions={svgDimensions}
+            updateHover={this.props.updateHover}
           />
         </svg>
       </div>
