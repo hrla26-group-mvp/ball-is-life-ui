@@ -26,3 +26,12 @@
   height: 70%; */
   border: none;
 }
+
+.containerOne {
+  display: flex;
+  flex-direction: column;
+}
+
+.playerTitle {
+  margin-top: 15%;
+}
