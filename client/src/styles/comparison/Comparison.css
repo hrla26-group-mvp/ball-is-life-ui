@@ -1,11 +1,68 @@
 .svgContainer{
   width:100%;
   height: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 .chartContainer{
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
+.chartTopContainer{
+  flex: 1;
+  display: flex;
+}
+.chartBottomContainer{
+  flex: 2;
+}
+.inputContainer{
+  flex: 1;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.arcOneContainer{
+  flex: 1;
+}
+.arcTwoContainer{
+  flex: 1;
+}
+.playerChoiceContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 30% 0 0 0; 
+}
+.playerOneContainer{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 10px 10px 10px 20px;
+}
+.playerTwoContainer{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 10px 10px 10px 20px;
+}
+.playerOneText{
+  font-size: 18px;
+  color: #63E09B;
+  font-weight: bold;
+  margin: 0 10px 0 0;
+}
+.playerTwoText{
+  font-size: 18px;
+  color: black;
+  font-weight: bold;
+  margin: 0 10px 0 0;
+}
+
+
+
 /* 
 .chart {
   background-color: #F5F2EB;
